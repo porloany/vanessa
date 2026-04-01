@@ -96,8 +96,8 @@
 
     .hero-tag {
       display: inline-block;
-      border: 1px solid rgba(245,239,228,0.35);
-      color: var(--cream);
+      background: var(--blush);
+      color: var(--green-dark);
       font-size: 11px;
       letter-spacing: 0.16em;
       text-transform: uppercase;
@@ -105,6 +105,7 @@
       border-radius: 40px;
       margin-bottom: 40px;
       width: fit-content;
+      border: none;
     }
 
     .hero-desc {
@@ -115,9 +116,17 @@
       margin-bottom: 40px;
     }
 
+    .hero-urgencia {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0.55;
+      margin-bottom: 16px;
+    }
+
     .cta-btn {
       display: inline-block;
-      background: var(--cream);
+      background: var(--blush);
       color: var(--green-dark);
       font-family: 'DM Sans', sans-serif;
       font-size: 12px;
@@ -132,7 +141,7 @@
     }
 
     .cta-btn:hover {
-      background: var(--blush);
+      background: var(--blush-dark);
       transform: translateY(-2px);
     }
 
@@ -462,6 +471,7 @@
       background: var(--cream);
       border-radius: 8px;
       padding: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
 
     /* FOOTER */
@@ -519,17 +529,18 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-left">
-      <div class="hero-nav">Vanessa Goulart · Nutricionista</div>
+      <div class="hero-nav">Vanessa Goulart · Nutricionista & Mamãe</div>
       <div class="hero-main">
         <h1>
-          <span>O Guia Completo de</span>
+          <span>Introdução alimentar sem medo, sem culpa e sem confusão</span>
           Introdução<br/>Alimentar
         </h1>
         <div class="hero-tag">Em breve · E-book</div>
         <p class="hero-desc">
-          Tudo que você precisa saber para começar a introdução alimentar do seu bebê com segurança, sem medo e sem culpa — escrito pela nutricionista que também é mãe.
+          Chega de abrir mil abas no Google e continuar insegura sobre como alimentar seu filho. Aqui você encontra tudo o que precisa para começar com segurança — sem medo de errar, sem culpa e sem confusão.
         </p>
-        <a href="#lista" class="cta-btn">Quero ser avisada</a>
+        <p class="hero-urgencia">Acesso antecipado + valor especial de lançamento</p>
+        <a href="#lista" class="cta-btn">Quero acesso antecipado</a>
       </div>
       <div class="hero-footer">@vanessagoulart_nutri</div>
     </div>
@@ -544,18 +555,18 @@
   <!-- STRIP TICKER -->
   <div class="strip">
     <div class="strip-track">
-      <div class="strip-item"><div class="strip-dot"></div><span>Introdução Alimentar</span></div>
-      <div class="strip-item"><div class="strip-dot"></div><span>BLW & Papinha</span></div>
-      <div class="strip-item"><div class="strip-dot"></div><span>Janela Imunológica</span></div>
-      <div class="strip-item"><div class="strip-dot"></div><span>Alergias Alimentares</span></div>
-      <div class="strip-item"><div class="strip-dot"></div><span>Cortes & Texturas</span></div>
-      <div class="strip-item"><div class="strip-dot"></div><span>Seletividade Alimentar</span></div>
-      <div class="strip-item"><div class="strip-dot"></div><span>Introdução Alimentar</span></div>
-      <div class="strip-item"><div class="strip-dot"></div><span>BLW & Papinha</span></div>
-      <div class="strip-item"><div class="strip-dot"></div><span>Janela Imunológica</span></div>
-      <div class="strip-item"><div class="strip-dot"></div><span>Alergias Alimentares</span></div>
-      <div class="strip-item"><div class="strip-dot"></div><span>Cortes & Texturas</span></div>
-      <div class="strip-item"><div class="strip-dot"></div><span>Seletividade Alimentar</span></div>
+      <div class="strip-item"><div class="strip-dot"></div><span>Sem medo de engasgo</span></div>
+      <div class="strip-item"><div class="strip-dot" style="background: var(--blush-dark); opacity: 0.8;"></div><span>Sem dúvida na hora de servir</span></div>
+      <div class="strip-item"><div class="strip-dot"></div><span>Sem culpa depois</span></div>
+      <div class="strip-item"><div class="strip-dot" style="background: var(--blush-dark); opacity: 0.8;"></div><span>Mais segurança no dia a dia</span></div>
+      <div class="strip-item"><div class="strip-dot"></div><span>Introdução alimentar leve</span></div>
+      <div class="strip-item"><div class="strip-dot" style="background: var(--blush-dark); opacity: 0.8;"></div><span>Confiança desde o primeiro alimento</span></div>
+      <div class="strip-item"><div class="strip-dot"></div><span>Sem medo de engasgo</span></div>
+      <div class="strip-item"><div class="strip-dot" style="background: var(--blush-dark); opacity: 0.8;"></div><span>Sem dúvida na hora de servir</span></div>
+      <div class="strip-item"><div class="strip-dot"></div><span>Sem culpa depois</span></div>
+      <div class="strip-item"><div class="strip-dot" style="background: var(--blush-dark); opacity: 0.8;"></div><span>Mais segurança no dia a dia</span></div>
+      <div class="strip-item"><div class="strip-dot"></div><span>Introdução alimentar leve</span></div>
+      <div class="strip-item"><div class="strip-dot" style="background: var(--blush-dark); opacity: 0.8;"></div><span>Confiança desde o primeiro alimento</span></div>
     </div>
   </div>
 
@@ -568,10 +579,12 @@
     <div class="sobre-text">
       <p class="section-label">Quem escreve esse guia</p>
       <h2>Vanessa Goulart</h2>
-      <p>Nutricionista especialista em nutrição infantil, alergias alimentares e janela imunológica. Mas além de tudo isso — ela é mãe.</p>
-      <p>É essa combinação que faz toda a diferença. Aqui você não vai receber só teoria: vai receber orientação de quem viveu na prática cada dúvida, cada susto, cada conquista da introdução alimentar.</p>
+      <p>Nutricionista especialista em nutrição infantil, alergias alimentares e janela imunológica.</p>
+      <p>Mas antes de tudo — mãe.</p>
+      <p>E foi vendo de perto o medo, a insegurança e a culpa de tantas mães que nasceu esse guia.</p>
+      <p>Aqui você não vai encontrar só teoria. Vai encontrar orientação real, de quem já esteve exatamente no seu lugar.</p>
       <div class="sobre-destaque">
-        "Um guia feito de mãe pra mãe, com respaldo científico de verdade."
+        "Um guia feito de mãe pra mãe — com segurança de verdade e sem terrorismo."
       </div>
     </div>
   </section>
@@ -581,30 +594,31 @@
     <div class="conteudo-header">
       <div>
         <p class="section-label">O que você vai aprender</p>
-        <h2>Do primeiro alimento<br/>ao prato cheio</h2>
+        <h2>Tudo o que você precisa para começar com segurança — do primeiro alimento ao prato cheio</h2>
       </div>
-      <p>Tudo numa linguagem simples, sem complicar o que já é difícil. Conteúdo que respeita a sua realidade de mãe — porque foi escrito por uma.</p>
+      <p>Sem complicar, sem excesso de informação e sem te deixar ainda mais confusa.</p>
+      <p style="margin-top: 12px; font-weight: 500;">Você vai sair daqui sabendo exatamente o que fazer — sem depender de opiniões aleatórias da internet.</p>
     </div>
     <div class="topicos">
       <div class="topico">
         <div class="topico-icon">🪟</div>
         <h3>Janela Imunológica</h3>
-        <p>O que é, quando começa e por que ela é tão importante para a saúde do seu filho a longo prazo.</p>
+        <p>Como fortalecer a saúde do seu filho desde o início da alimentação — e por que esse momento é tão importante.</p>
       </div>
       <div class="topico">
         <div class="topico-icon">🥣</div>
         <h3>BLW e Papinha</h3>
-        <p>As diferenças entre os métodos, qual se encaixa melhor pra você e como começar com segurança.</p>
+        <p>Qual método faz sentido pra sua rotina — e como começar sem insegurança.</p>
       </div>
       <div class="topico">
         <div class="topico-icon">🔪</div>
         <h3>Cortes e Texturas</h3>
-        <p>Como cortar cada alimento de acordo com a fase do bebê para evitar engasgos sem abrir mão da variedade.</p>
+        <p>Como preparar os alimentos com segurança em cada fase do bebê e evitar engasgos.</p>
       </div>
       <div class="topico">
         <div class="topico-icon">🌿</div>
         <h3>Alergias Alimentares</h3>
-        <p>Como identificar sinais de alergia, quais alimentos são mais alergênicos e como introduzi-los com segurança.</p>
+        <p>Como identificar sinais de alerta e introduzir alimentos alergênicos sem medo.</p>
       </div>
     </div>
   </section>
@@ -614,24 +628,25 @@
     <div class="para-quem-left">
       <p class="section-label">Para quem é</p>
       <h2>Esse guia é<br/>pra você que…</h2>
-      <p>Você não precisa ser expert em nutrição. Precisa só querer o melhor pro seu filho — e é isso que este guia vai te ajudar a fazer.</p>
+      <p>Você não precisa ser expert em nutrição. Precisa só querer o melhor pro seu filho — e é exatamente isso que eu vou te ajudar a fazer.</p>
+      <p style="margin-top: 16px; font-weight: 500;">Se você já se sentiu assim, esse guia é pra você:</p>
     </div>
     <div class="checks">
       <div class="check-item">
         <span class="check-num">01.</span>
-        <span>Está chegando na fase da introdução alimentar e não sabe por onde começar</span>
+        <span>Está chegando na introdução alimentar e sente que não sabe por onde começar</span>
       </div>
       <div class="check-item">
         <span class="check-num">02.</span>
-        <span>Tem medo de engasgo, alergia ou de errar na alimentação do bebê</span>
+        <span>Tem medo de engasgo, alergia… ou de errar e se culpar depois</span>
       </div>
       <div class="check-item">
         <span class="check-num">03.</span>
-        <span>Já pesquisou muito na internet mas continua confusa com tanta informação contraditória</span>
+        <span>Já pesquisou muito, mas só ficou mais confusa com tanta informação contraditória</span>
       </div>
       <div class="check-item">
         <span class="check-num">04.</span>
-        <span>Quer fazer tudo certo, mas com leveza — sem transformar a hora da comida em estresse</span>
+        <span>Quer fazer tudo certo — mas sem transformar a alimentação em estresse</span>
       </div>
     </div>
   </section>
@@ -640,12 +655,15 @@
   <section class="formulario" id="lista">
     <div class="formulario-left">
       <p class="section-label" style="color: rgba(242,217,207,0.7);">Lista de espera</p>
-      <h2>Quero ser avisada<br/>quando lançar</h2>
-      <p>Deixa seu nome e email aqui. Você vai ser a primeira a saber quando o guia estiver disponível — e vai ter acesso ao preço especial de lançamento.</p>
+      <h2>Quero garantir<br/>acesso antecipado</h2>
+      <p>Se você chegou até aqui… esse guia é pra você. 🌿</p>
+      <p style="margin-top: 8px; font-weight: 500;">E quanto antes você entrar, melhores serão as condições.</p>
+      <p style="margin-top: 12px;">Deixa seu email e você será uma das primeiras a receber — com acesso ao valor especial de lançamento. As vagas iniciais são liberadas primeiro pra quem estiver na lista.</p>
     </div>
     <div class="formulario-right">
       <p class="section-label">Cadastre seu email</p>
       <div class="ml-embedded" data-form="BqjTUt"></div>
+      <p style="font-size: 12px; opacity: 0.5; margin-top: 12px; text-align: center;">Sem spam. Só aviso importante.</p>
     </div>
   </section>
 
