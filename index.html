@@ -362,6 +362,11 @@
       margin-bottom: 16px;
     }
 
+    .topico-icon {
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+    }
+
     .topico h3 {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.6rem;
@@ -472,6 +477,19 @@
 
     footer span { opacity: 0.45; }
 
+    .footer-insta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--cream);
+      opacity: 0.6;
+      text-decoration: none;
+      font-size: 12px;
+      transition: opacity 0.2s;
+    }
+
+    .footer-insta:hover { opacity: 1; }
+
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(24px); }
       to { opacity: 1; transform: translateY(0); }
@@ -513,7 +531,7 @@
         </p>
         <a href="#lista" class="cta-btn">Quero ser avisada</a>
       </div>
-      <div class="hero-footer">© 2026 · Nutrição Infantil</div>
+      <div class="hero-footer">@vanessagoulart_nutri</div>
     </div>
     <div class="hero-right">
       <img src="vanessa-gravida.png" alt="Vanessa Goulart grávida"/>
@@ -545,7 +563,7 @@
   <section class="sobre">
     <div class="sobre-foto">
       <img src="vanessa-perfil.png" alt="Vanessa Goulart"/>
-      <div class="sobre-foto-label">Nutricionista & Mãe</div>
+      <div class="sobre-foto-label">Nutricionista & mamãe do Victor e da Sarah</div>
     </div>
     <div class="sobre-text">
       <p class="section-label">Quem escreve esse guia</p>
@@ -569,18 +587,22 @@
     </div>
     <div class="topicos">
       <div class="topico">
+        <div class="topico-icon">🪟</div>
         <h3>Janela Imunológica</h3>
         <p>O que é, quando começa e por que ela é tão importante para a saúde do seu filho a longo prazo.</p>
       </div>
       <div class="topico">
+        <div class="topico-icon">🥣</div>
         <h3>BLW e Papinha</h3>
         <p>As diferenças entre os métodos, qual se encaixa melhor pra você e como começar com segurança.</p>
       </div>
       <div class="topico">
+        <div class="topico-icon">🔪</div>
         <h3>Cortes e Texturas</h3>
         <p>Como cortar cada alimento de acordo com a fase do bebê para evitar engasgos sem abrir mão da variedade.</p>
       </div>
       <div class="topico">
+        <div class="topico-icon">🌿</div>
         <h3>Alergias Alimentares</h3>
         <p>Como identificar sinais de alergia, quais alimentos são mais alergênicos e como introduzi-los com segurança.</p>
       </div>
@@ -629,7 +651,10 @@
 
   <footer>
     <span>© 2026 Vanessa Goulart · Nutricionista especialista em nutrição infantil</span>
-    <span>E-book · Em breve</span>
+    <a href="https://instagram.com/vanessagoulart_nutri" target="_blank" class="footer-insta">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      @vanessagoulart_nutri
+    </a>
   </footer>
 
 </body>
