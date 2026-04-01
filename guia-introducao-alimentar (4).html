@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Guia de Introdução Alimentar – Vanessa Goulart</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+  <!-- MailerLite Universal -->
+  <script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},l=d.createElement(e),l.async=1,l.src=u,n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '2238495');
+  </script>
+  <!-- End MailerLite Universal -->
+
+  <style>
+    :root {
+      --green-dark: #2D4A35;
+      --green-mid: #3D6147;
+      --cream: #F5EFE4;
+      --cream-dark: #EDE4D6;
+      --blush: #F2D9CF;
+      --blush-dark: #E8C4B6;
+      --white: #FDFAF6;
+      --charcoal: #1E2820;
+      --text-muted: #6B7C6E;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--charcoal);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--cream);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 100vh;
+    }
+
+    .hero-left {
+      background: var(--green-dark);
+      color: var(--cream);
+      padding: 64px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      animation: fadeUp 0.9s ease both;
+    }
+
+    .hero-nav {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.6;
+      font-weight: 400;
+    }
+
+    .hero-main { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 48px 0; }
+
+    .hero-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5rem;
+      font-style: italic;
+      opacity: 0.18;
+      line-height: 1;
+      margin-bottom: -16px;
+    }
+
+    .hero-left h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      font-weight: 500;
+      font-style: italic;
+      line-height: 1.1;
+      color: var(--cream);
+      margin-bottom: 24px;
+    }
+
+    .hero-left h1 span {
+      font-style: normal;
+      font-weight: 300;
+      font-size: 0.55em;
+      display: block;
+      letter-spacing: 0.05em;
+      opacity: 0.8;
+      margin-bottom: 8px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      border: 1px solid rgba(245,239,228,0.35);
+      color: var(--cream);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      border-radius: 40px;
+      margin-bottom: 40px;
+      width: fit-content;
+    }
+
+    .hero-desc {
+      font-size: 14px;
+      line-height: 1.85;
+      opacity: 0.75;
+      max-width: 360px;
+      margin-bottom: 40px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--cream);
+      color: var(--green-dark);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 16px 36px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.2s;
+      width: fit-content;
+    }
+
+    .cta-btn:hover {
+      background: var(--blush);
+      transform: translateY(-2px);
+    }
+
+    .hero-footer {
+      font-size: 11px;
+      opacity: 0.45;
+      letter-spacing: 0.1em;
+    }
+
+    .hero-right {
+      position: relative;
+      animation: fadeUp 1s ease 0.15s both;
+      overflow: hidden;
+    }
+
+    .hero-right img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center bottom;
+      display: block;
+      background: var(--cream-dark);
+    }
+
+    .hero-right-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(45,74,53,0.7) 0%, transparent 60%);
+      padding: 40px 36px;
+    }
+
+    .hero-right-overlay p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-style: italic;
+      color: var(--cream);
+      line-height: 1.4;
+    }
+
+    /* ── STRIP TICKER ── */
+    .strip {
+      background: var(--blush);
+      padding: 20px 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .strip-track {
+      display: inline-flex;
+      align-items: center;
+      animation: ticker 22s linear infinite;
+    }
+
+    .strip-track:hover { animation-play-state: paused; }
+
+    .strip-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      padding: 0 32px;
+      flex-shrink: 0;
+    }
+
+    .strip-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green-dark);
+      opacity: 0.5;
+      flex-shrink: 0;
+    }
+
+    .strip-item span {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--green-dark);
+    }
+
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ── SOBRE ── */
+    .sobre {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 80vh;
+    }
+
+    .sobre-foto {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sobre-foto img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center center;
+      display: block;
+      background: var(--cream-dark);
+    }
+
+    .sobre-foto-label {
+      position: absolute;
+      top: 32px;
+      left: 32px;
+      background: var(--blush);
+      color: var(--green-dark);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 8px 16px;
+      border-radius: 40px;
+    }
+
+    .sobre-text {
+      background: var(--cream-dark);
+      padding: 72px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .section-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4.5rem;
+      font-style: italic;
+      color: var(--green-dark);
+      opacity: 0.12;
+      line-height: 1;
+      margin-bottom: -8px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--green-mid);
+      margin-bottom: 20px;
+    }
+
+    .sobre-text h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 500;
+      font-style: italic;
+      line-height: 1.15;
+      margin-bottom: 28px;
+    }
+
+    .sobre-text p {
+      font-size: 14.5px;
+      line-height: 1.9;
+      opacity: 0.8;
+      margin-bottom: 16px;
+    }
+
+    .sobre-destaque {
+      background: var(--green-dark);
+      color: var(--cream);
+      padding: 20px 24px;
+      border-radius: 4px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      line-height: 1.5;
+      margin-top: 16px;
+    }
+
+    /* ── CONTEÚDO ── */
+    .conteudo {
+      background: var(--white);
+      padding: 96px 56px;
+    }
+
+    .conteudo-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: end;
+      margin-bottom: 64px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+
+    .conteudo-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-weight: 500;
+      font-style: italic;
+      line-height: 1.15;
+    }
+
+    .conteudo-header p {
+      font-size: 14px;
+      line-height: 1.85;
+      color: var(--text-muted);
+    }
+
+    .topicos {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+    }
+
+    .topico {
+      background: var(--cream);
+      padding: 40px;
+      transition: filter 0.25s;
+    }
+
+    .topico:nth-child(2) { background: var(--green-dark); color: var(--cream); }
+    .topico:nth-child(4) { background: var(--blush); }
+    .topico:hover { filter: brightness(0.96); }
+
+    .topico-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      font-style: italic;
+      opacity: 0.15;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .topico h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 500;
+      font-style: italic;
+      margin-bottom: 12px;
+    }
+
+    .topico p {
+      font-size: 13.5px;
+      line-height: 1.8;
+      opacity: 0.75;
+    }
+
+    /* ── PARA QUEM ── */
+    .para-quem {
+      background: var(--blush);
+      padding: 96px 56px;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .para-quem-left h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-weight: 500;
+      font-style: italic;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .para-quem-left p {
+      font-size: 14px;
+      line-height: 1.85;
+      opacity: 0.7;
+    }
+
+    .checks { display: flex; flex-direction: column; }
+
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(45,74,53,0.12);
+      font-size: 14.5px;
+      line-height: 1.65;
+    }
+
+    .check-item:first-child { border-top: 1px solid rgba(45,74,53,0.12); }
+
+    .check-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--green-dark);
+      opacity: 0.5;
+      flex-shrink: 0;
+      width: 24px;
+      margin-top: 1px;
+    }
+
+    /* ── FORMULÁRIO ── */
+    .formulario {
+      background: var(--green-dark);
+      padding: 96px 56px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .formulario-left h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-weight: 500;
+      font-style: italic;
+      color: var(--cream);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .formulario-left p {
+      font-size: 14px;
+      line-height: 1.85;
+      color: var(--cream);
+      opacity: 0.65;
+    }
+
+    .formulario-right {
+      background: var(--cream);
+      border-radius: 8px;
+      padding: 40px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--charcoal);
+      color: var(--cream);
+      padding: 32px 56px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+    }
+
+    footer span { opacity: 0.45; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── RESPONSIVO ── */
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { padding: 48px 28px; min-height: 70vh; }
+      .hero-right { height: 70vw; min-height: 280px; }
+      .strip { padding: 20px 28px; gap: 28px; }
+      .sobre { grid-template-columns: 1fr; }
+      .sobre-foto { height: 70vw; min-height: 260px; }
+      .sobre-text { padding: 48px 28px; }
+      .conteudo { padding: 64px 28px; }
+      .conteudo-header { grid-template-columns: 1fr; gap: 20px; }
+      .topicos { grid-template-columns: 1fr; }
+      .para-quem { grid-template-columns: 1fr; padding: 64px 28px; gap: 40px; }
+      .formulario { grid-template-columns: 1fr; padding: 64px 28px; gap: 40px; }
+      .formulario-right { padding: 28px 20px; }
+      footer { flex-direction: column; gap: 8px; text-align: center; padding: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-nav">Vanessa Goulart · Nutricionista</div>
+      <div class="hero-main">
+        <h1>
+          <span>O Guia Completo de</span>
+          Introdução<br/>Alimentar
+        </h1>
+        <div class="hero-tag">Em breve · E-book</div>
+        <p class="hero-desc">
+          Tudo que você precisa saber para começar a introdução alimentar do seu bebê com segurança, sem medo e sem culpa — escrito pela nutricionista que também é mãe.
+        </p>
+        <a href="#lista" class="cta-btn">Quero ser avisada</a>
+      </div>
+      <div class="hero-footer">© 2025 · Nutrição Infantil</div>
+    </div>
+    <div class="hero-right">
+      <img src="IMG_8841.PNG" alt="Vanessa Goulart grávida"/>
+      <div class="hero-right-overlay">
+        <p>"da nutricionista<br/>que também é mãe"</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIP TICKER -->
+  <div class="strip">
+    <div class="strip-track">
+      <div class="strip-item"><div class="strip-dot"></div><span>Introdução Alimentar</span></div>
+      <div class="strip-item"><div class="strip-dot"></div><span>BLW & Papinha</span></div>
+      <div class="strip-item"><div class="strip-dot"></div><span>Janela Imunológica</span></div>
+      <div class="strip-item"><div class="strip-dot"></div><span>Alergias Alimentares</span></div>
+      <div class="strip-item"><div class="strip-dot"></div><span>Cortes & Texturas</span></div>
+      <div class="strip-item"><div class="strip-dot"></div><span>Seletividade Alimentar</span></div>
+      <div class="strip-item"><div class="strip-dot"></div><span>Introdução Alimentar</span></div>
+      <div class="strip-item"><div class="strip-dot"></div><span>BLW & Papinha</span></div>
+      <div class="strip-item"><div class="strip-dot"></div><span>Janela Imunológica</span></div>
+      <div class="strip-item"><div class="strip-dot"></div><span>Alergias Alimentares</span></div>
+      <div class="strip-item"><div class="strip-dot"></div><span>Cortes & Texturas</span></div>
+      <div class="strip-item"><div class="strip-dot"></div><span>Seletividade Alimentar</span></div>
+    </div>
+  </div>
+
+  <!-- SOBRE -->
+  <section class="sobre">
+    <div class="sobre-foto">
+      <img src="IMG_8842.PNG" alt="Vanessa Goulart"/>
+      <div class="sobre-foto-label">Nutricionista & Mãe</div>
+    </div>
+    <div class="sobre-text">
+      <p class="section-label">Quem escreve esse guia</p>
+      <h2>Vanessa<br/>Goulart</h2>
+      <p>Nutricionista especialista em nutrição infantil, alergias alimentares e janela imunológica. Mas além de tudo isso — ela é mãe.</p>
+      <p>É essa combinação que faz toda a diferença. Aqui você não vai receber só teoria: vai receber orientação de quem viveu na prática cada dúvida, cada susto, cada conquista da introdução alimentar.</p>
+      <div class="sobre-destaque">
+        "Um guia feito de mãe pra mãe, com respaldo científico de verdade."
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTEÚDO -->
+  <section class="conteudo">
+    <div class="conteudo-header">
+      <div>
+        <p class="section-label">O que você vai aprender</p>
+        <h2>Do primeiro<br/>alimento ao<br/>prato cheio</h2>
+      </div>
+      <p>Tudo numa linguagem simples, sem complicar o que já é difícil. Conteúdo que respeita a sua realidade de mãe — porque foi escrito por uma.</p>
+    </div>
+    <div class="topicos">
+      <div class="topico">
+        <h3>Janela Imunológica</h3>
+        <p>O que é, quando começa e por que ela é tão importante para a saúde do seu filho a longo prazo.</p>
+      </div>
+      <div class="topico">
+        <h3>BLW e Papinha</h3>
+        <p>As diferenças entre os métodos, qual se encaixa melhor pra você e como começar com segurança.</p>
+      </div>
+      <div class="topico">
+        <h3>Cortes e Texturas</h3>
+        <p>Como cortar cada alimento de acordo com a fase do bebê para evitar engasgos sem abrir mão da variedade.</p>
+      </div>
+      <div class="topico">
+        <h3>Alergias Alimentares</h3>
+        <p>Como identificar sinais de alergia, quais alimentos são mais alergênicos e como introduzi-los com segurança.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARA QUEM -->
+  <section class="para-quem">
+    <div class="para-quem-left">
+      <p class="section-label">Para quem é</p>
+      <h2>Esse guia<br/>é pra você<br/>que…</h2>
+      <p>Você não precisa ser expert em nutrição. Precisa só querer o melhor pro seu filho — e é isso que este guia vai te ajudar a fazer.</p>
+    </div>
+    <div class="checks">
+      <div class="check-item">
+        <span class="check-num">01.</span>
+        <span>Está chegando na fase da introdução alimentar e não sabe por onde começar</span>
+      </div>
+      <div class="check-item">
+        <span class="check-num">02.</span>
+        <span>Tem medo de engasgo, alergia ou de errar na alimentação do bebê</span>
+      </div>
+      <div class="check-item">
+        <span class="check-num">03.</span>
+        <span>Já pesquisou muito na internet mas continua confusa com tanta informação contraditória</span>
+      </div>
+      <div class="check-item">
+        <span class="check-num">04.</span>
+        <span>Quer fazer tudo certo, mas com leveza — sem transformar a hora da comida em estresse</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULÁRIO -->
+  <section class="formulario" id="lista">
+    <div class="formulario-left">
+      <p class="section-label" style="color: rgba(242,217,207,0.7);">Lista de espera</p>
+      <h2>Quero ser<br/>avisada quando<br/>lançar</h2>
+      <p>Deixa seu nome e email aqui. Você vai ser a primeira a saber quando o guia estiver disponível — e vai ter acesso ao preço especial de lançamento.</p>
+    </div>
+    <div class="formulario-right">
+      <p class="section-label">Cadastre seu email</p>
+      <div class="ml-embedded" data-form="BqjTUt"></div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2025 Vanessa Goulart · Nutricionista especialista em nutrição infantil</span>
+    <span>E-book · Em breve</span>
+  </footer>
+
+</body>
+</html>
