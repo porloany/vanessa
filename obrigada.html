@@ -17,6 +17,7 @@
       --white: #FDFAF6;
       --charcoal: #1E2820;
       --text-muted: #6B7C6E;
+      --line-soft: rgba(45,74,53,0.10);
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -44,7 +45,33 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      position: relative;
+      overflow: hidden;
       animation: fadeUp 0.9s ease both;
+    }
+
+    .left::before {
+      content: "";
+      position: absolute;
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      background: rgba(242,217,207,0.08);
+      top: -120px;
+      right: -80px;
+      pointer-events: none;
+    }
+
+    .left::after {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      border: 1px solid rgba(242,217,207,0.10);
+      bottom: -80px;
+      left: -60px;
+      pointer-events: none;
     }
 
     .topline {
@@ -53,6 +80,8 @@
       text-transform: uppercase;
       opacity: 0.6;
       font-weight: 400;
+      position: relative;
+      z-index: 1;
     }
 
     .left-main {
@@ -61,6 +90,8 @@
       flex-direction: column;
       justify-content: center;
       padding: 48px 0;
+      position: relative;
+      z-index: 1;
     }
 
     .tag {
@@ -111,28 +142,6 @@
       margin-bottom: 12px;
     }
 
-    .benefits {
-      display: grid;
-      gap: 12px;
-      margin-bottom: 28px;
-      max-width: 500px;
-    }
-
-    .benefit {
-      font-size: 14px;
-      line-height: 1.75;
-      color: var(--cream);
-      opacity: 0.9;
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-    }
-
-    .benefit-mark {
-      opacity: 0.9;
-      flex-shrink: 0;
-    }
-
     .cta-btn {
       display: inline-block;
       background: var(--blush);
@@ -147,6 +156,7 @@
       text-decoration: none;
       transition: background 0.3s, transform 0.2s;
       width: fit-content;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.10);
     }
 
     .cta-btn:hover {
@@ -162,23 +172,33 @@
       max-width: 430px;
     }
 
+    .signature {
+      margin-top: 26px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: rgba(245,239,228,0.82);
+    }
+
     .right {
-      position: relative;
-      background: var(--cream-dark);
+      background: linear-gradient(180deg, var(--cream-dark) 0%, var(--cream) 100%);
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 56px;
+      position: relative;
       animation: fadeUp 1s ease 0.15s both;
     }
 
     .card {
-      background: var(--white);
-      border-radius: 8px;
+      background: rgba(253,250,246,0.92);
+      backdrop-filter: blur(2px);
+      border-radius: 12px;
       padding: 40px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      max-width: 460px;
+      max-width: 470px;
       width: 100%;
+      border: 1px solid rgba(45,74,53,0.05);
     }
 
     .section-label {
@@ -196,7 +216,7 @@
       font-weight: 500;
       font-style: italic;
       line-height: 1.15;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       color: var(--green-dark);
     }
 
@@ -209,7 +229,7 @@
 
     .steps {
       margin-top: 22px;
-      border-top: 1px solid rgba(45,74,53,0.10);
+      border-top: 1px solid var(--line-soft);
       padding-top: 18px;
     }
 
@@ -237,6 +257,16 @@
       width: 20px;
       flex-shrink: 0;
       margin-top: 1px;
+    }
+
+    .card-note {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line-soft);
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--green-mid);
+      opacity: 0.85;
     }
 
     .back-link {
@@ -295,22 +325,7 @@
 
         <div class="desc">
           <p>Entre no grupo VIP do WhatsApp para receber a abertura antes de todo mundo, além das informações mais importantes sobre o lançamento.</p>
-          <p>É a forma mais simples de acompanhar tudo com prioridade.</p>
-        </div>
-
-        <div class="benefits">
-          <div class="benefit">
-            <span class="benefit-mark">✔</span>
-            <span>Aviso antes da abertura oficial</span>
-          </div>
-          <div class="benefit">
-            <span class="benefit-mark">✔</span>
-            <span>Condição especial de lançamento</span>
-          </div>
-          <div class="benefit">
-            <span class="benefit-mark">✔</span>
-            <span>Comunicação mais próxima, leve e organizada</span>
-          </div>
+          <p>É a forma mais simples de acompanhar tudo com prioridade, leveza e mais proximidade.</p>
         </div>
 
         <a href="SEU_LINK_DO_GRUPO" class="cta-btn" target="_blank" rel="noopener noreferrer">
@@ -320,6 +335,8 @@
         <p class="mini">
           Grupo silencioso, apenas com avisos importantes. Sem conversa solta e sem excesso de mensagens. 🤍
         </p>
+
+        <div class="signature">com carinho, Vanessa</div>
       </div>
 
       <div></div>
@@ -347,6 +364,10 @@
             <span>Acompanhe tudo com prioridade e aproveite as melhores condições</span>
           </div>
         </div>
+
+        <p class="card-note">
+          Esse espaço foi pensado para deixar a experiência mais organizada, acolhedora e próxima de você.
+        </p>
 
         <a href="index.html" class="back-link">Voltar para a página inicial</a>
       </div>
