@@ -297,6 +297,12 @@
       margin-bottom: 20px;
     }
 
+    .sobre-text h2 {
+      font-size: clamp(3rem, 5.2vw, 4.6rem);
+      line-height: 1.02;
+      margin-bottom: 26px;
+    }
+
     .sobre-text p,
     .emocional p,
     .conteudo-header p,
@@ -509,10 +515,14 @@
       background: var(--charcoal);
       color: var(--cream);
       padding: 32px 56px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       font-size: 12px;
+    }
+
+    .footer-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: flex-start;
     }
 
     footer span { opacity: 0.45; }
@@ -529,6 +539,11 @@
     }
 
     .footer-insta:hover { opacity: 1; }
+
+    .footer-credit {
+      opacity: 0.34;
+      font-size: 11px;
+    }
 
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(24px); }
@@ -554,7 +569,11 @@
       .para-quem,
       .prova-social,
       .formulario {
-        padding: 48px 28px;
+        padding: 36px 20px;
+      }
+
+      .hero-main {
+        padding: 24px 0;
       }
 
       .hero-right { height: 70vw; min-height: 280px; }
@@ -562,11 +581,46 @@
       .topicos { grid-template-columns: 1fr; }
       .formulario-right { padding: 28px 20px; }
 
+      .section-label {
+        margin-bottom: 12px;
+      }
+
+      .sobre-text h2,
+      .emocional h2,
+      .conteudo-header h2,
+      .para-quem-left h2,
+      .prova-social h2,
+      .formulario-left h2 {
+        margin-bottom: 12px;
+      }
+
+      .sobre-text h2 {
+        font-size: clamp(2.7rem, 9vw, 3.6rem);
+        margin-bottom: 16px;
+      }
+
+      .sobre-text p,
+      .emocional p,
+      .conteudo-header p,
+      .para-quem-left p,
+      .prova-social p,
+      .formulario-left p {
+        margin-bottom: 10px;
+        line-height: 1.7;
+      }
+
+      .form-title {
+        font-size: 2rem;
+      }
+
       footer {
-        flex-direction: column;
-        gap: 8px;
+        padding: 28px 20px;
         text-align: center;
-        padding: 28px;
+      }
+
+      .footer-stack {
+        align-items: center;
+        gap: 10px;
       }
     }
   </style>
@@ -780,11 +834,16 @@
   </section>
 
   <footer>
-    <span>© 2026 Vanessa Goulart · Nutricionista especialista em nutrição infantil</span>
-    <a href="https://instagram.com/vanessagoulart_nutri" target="_blank" class="footer-insta">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-      @vanessagoulart_nutri
-    </a>
+    <div class="footer-stack">
+      <span>© 2026 Vanessa Goulart · Nutricionista especialista em nutrição infantil</span>
+
+      <a href="https://instagram.com/vanessagoulart_nutri" target="_blank" class="footer-insta">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        @vanessagoulart_nutri
+      </a>
+
+      <span class="footer-credit">Design & desenvolvimento por SEU NOME</span>
+    </div>
   </footer>
 
 </body>
