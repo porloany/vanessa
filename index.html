@@ -13,8 +13,8 @@
 
   <style>
     :root {
-      --green-dark: #314B38;
-      --green-deep: #26372A;
+      --green-dark: #2E4A35;
+      --green-deep: #243A2B;
       --green-soft: #A8B69E;
       --cream: #F7F1E8;
       --cream-2: #EFE5D8;
@@ -37,7 +37,7 @@
       background: var(--cream);
       color: var(--charcoal);
       font-family: 'DM Sans', sans-serif;
-      font-weight: 400;
+      font-weight: 300;
       letter-spacing: 0.01em;
       overflow-x: hidden;
     }
@@ -70,27 +70,31 @@
       font-weight: 500;
       font-style: italic;
       color: var(--charcoal);
+      letter-spacing: -0.02em;
     }
 
     .title-xl {
-      font-size: clamp(3rem, 6vw, 5.2rem);
+      font-size: clamp(2.4rem, 6vw, 5.2rem);
       line-height: 0.98;
     }
 
     .title-lg {
-      font-size: clamp(2.3rem, 4vw, 3.8rem);
+      font-size: clamp(2rem, 4vw, 3.8rem);
       line-height: 1.02;
     }
 
     .title-md {
-      font-size: clamp(2rem, 3vw, 2.8rem);
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
       line-height: 1.08;
+      margin-bottom: 12px;
     }
 
     .body-text {
       font-size: 15px;
       line-height: 1.82;
       color: var(--muted);
+      font-weight: 300;
+      margin-bottom: 8px;
     }
 
     .cta-btn {
@@ -440,10 +444,17 @@
 
     /* EMOCIONAL */
     .emotion-grid {
-      display: grid;
-      grid-template-columns: 0.92fr 1.08fr;
-      gap: 52px;
-      align-items: start;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .emotion-section {
+      background: var(--cream-2);
+      border-radius: 30px;
+      padding: 36px 48px;
+      border: 1px solid rgba(49,75,56,0.06);
+      box-shadow: var(--shadow);
     }
 
     /* CONTEUDO */
@@ -452,17 +463,20 @@
       border-radius: 30px;
       box-shadow: var(--shadow);
       border: 1px solid rgba(49,75,56,0.08);
-      padding: 54px;
+      padding: 44px 54px;
     }
 
     .content-header {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 46px;
-      align-items: start;
-      padding-bottom: 34px;
-      margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding-bottom: 28px;
+      margin-bottom: 28px;
       border-bottom: 1px solid var(--line);
+    }
+
+    .content-header .title-md {
+      margin-bottom: 0;
     }
 
     .content-header .body-text strong {
@@ -786,8 +800,6 @@
     @media (max-width: 980px) {
       .hero-main,
       .about-grid,
-      .emotion-grid,
-      .content-header,
       .forwho-grid,
       .proof-grid,
       .form-grid {
@@ -947,7 +959,8 @@
 
   <section class="section" style="padding-top: 8px;">
     <div class="container">
-      <div class="emotion-grid">
+      <div class="emotion-section">
+        <div class="emotion-grid">
         <div>
           <p class="section-label">Antes de começar</p>
           <h2 class="title-md">Se você está insegura, você não está sozinha</h2>
@@ -956,6 +969,7 @@
         <div>
           <p class="body-text">Muitas mães chegam nessa fase com medo, dúvidas e a sensação de não saber por onde começar.</p>
           <p class="body-text">Esse guia foi pensado para organizar a informação e te dar mais clareza, segurança e tranquilidade no dia a dia.</p>
+        </div>
         </div>
       </div>
     </div>
@@ -1012,7 +1026,7 @@
           <div>
             <p class="section-label">Para quem é</p>
             <h2 class="title-md">Esse guia é pra você que…</h2>
-            <p class="body-text">Você não precisa ser expert em nutrição. Precisa só querer viver essa fase com mais segurança e é exatamente isso que esse guia vai te ajudar a fazer.</p>
+            <p class="body-text" style="margin-top: 14px;">Você não precisa ser expert em nutrição. Precisa só querer viver essa fase com mais segurança e é exatamente isso que esse guia vai te ajudar a fazer.</p>
             <p class="body-text" style="font-weight: 600; color: var(--green-deep); margin-top: 14px;">Se você já se sentiu assim, esse guia pode mudar completamente a forma como você vai passar por esse momento:</p>
           </div>
 
@@ -1045,7 +1059,7 @@
         <div>
           <p class="section-label">Orientação com acolhimento</p>
           <h2 class="title-md">Um guia criado por quem une conhecimento técnico com maternidade real</h2>
-          <p class="body-text">Esse guia foi pensado para transformar a insegurança do começo em mais clareza no dia a dia.</p>
+          <p class="body-text" style="margin-top: 14px;">Esse guia foi pensado para transformar a insegurança do começo em mais clareza no dia a dia.</p>
           <p class="body-text">Com uma linguagem simples, prática e sem terrorismo, você entende o que fazer e se sente mais segura em cada etapa.</p>
           <p class="body-text">É uma orientação acolhedora, organizada e feita para a vida real.</p>
         </div>
