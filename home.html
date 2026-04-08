@@ -98,8 +98,8 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      background: var(--blush);
-      color: var(--green-deep);
+      background: var(--green-dark);
+      color: var(--cream);
       text-decoration: none;
       text-transform: uppercase;
       letter-spacing: 0.16em;
@@ -107,15 +107,15 @@
       font-weight: 600;
       padding: 15px 26px;
       border-radius: 999px;
-      box-shadow: 0 10px 22px rgba(0,0,0,0.10);
+      box-shadow: 0 10px 22px rgba(49,75,56,0.28);
       transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
       width: fit-content;
     }
 
     .cta-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 14px 26px rgba(0,0,0,0.14);
-      background: #dcc8c4;
+      box-shadow: 0 14px 26px rgba(49,75,56,0.36);
+      background: var(--green-deep);
     }
 
     .soft-card {
@@ -325,12 +325,12 @@
 
     /* STRIP */
     .strip {
-      background: linear-gradient(180deg, var(--blush) 0%, #e0ccc8 100%);
+      background: var(--cream);
       padding: 18px 0;
       overflow: hidden;
       white-space: nowrap;
-      border-top: 1px solid rgba(49,75,56,0.05);
-      border-bottom: 1px solid rgba(49,75,56,0.05);
+      border-top: 1px solid rgba(49,75,56,0.10);
+      border-bottom: 1px solid rgba(49,75,56,0.10);
     }
 
     .strip-track {
@@ -719,38 +719,61 @@
     footer {
       background: var(--charcoal);
       color: var(--cream);
-      padding: 32px 0;
+      padding: 52px 0 36px;
       margin-top: 18px;
+      text-align: center;
+    }
+
+    .footer-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-style: italic;
+      font-weight: 500;
+      color: var(--cream);
+      margin-bottom: 6px;
+      opacity: 0.92;
+    }
+
+    .footer-role {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0.38;
+      margin-bottom: 28px;
+    }
+
+    .footer-divider {
+      width: 40px;
+      height: 1px;
+      background: rgba(247,241,232,0.15);
+      margin: 0 auto 24px;
     }
 
     .footer-stack {
       display: flex;
       flex-direction: column;
-      gap: 8px;
-      align-items: flex-start;
+      gap: 10px;
+      align-items: center;
       font-size: 12px;
     }
 
-    .footer-stack span {
-      opacity: 0.45;
-    }
+    .footer-stack span { opacity: 0.38; }
 
     .footer-insta {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       color: var(--cream);
-      opacity: 0.62;
+      opacity: 0.55;
       text-decoration: none;
-      transition: opacity 0.2s ease;
+      font-size: 12px;
+      transition: opacity 0.2s;
     }
 
-    .footer-insta:hover {
-      opacity: 1;
-    }
+    .footer-insta:hover { opacity: 1; }
 
     .footer-credit {
-      opacity: 0.34;
+      opacity: 0.26;
       font-size: 11px;
     }
 
@@ -1080,14 +1103,15 @@
 
   <footer>
     <div class="container">
+      <p class="footer-name">Vanessa Goulart</p>
+      <p class="footer-role">Nutricionista especialista em nutrição infantil</p>
+      <div class="footer-divider"></div>
       <div class="footer-stack">
-        <span>© 2026 Vanessa Goulart · Nutricionista especialista em nutrição infantil</span>
-
         <a href="https://instagram.com/vanessagoulart_nutri" target="_blank" class="footer-insta">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
           @vanessagoulart_nutri
         </a>
-
+        <span>© 2026 Vanessa Goulart · Todos os direitos reservados</span>
         <span class="footer-credit">Design & desenvolvimento por Loany Dias</span>
       </div>
     </div>
