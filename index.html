@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8"/>
@@ -401,6 +401,18 @@
     @keyframes ticker {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
+    }
+
+    /* SCROLL REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* SOBRE */
@@ -869,7 +881,7 @@
 
       .proof-stat-label { max-width: 200px; }
 
-      .about-photo-card { min-height: 420px; }
+      .about-photo-card { min-height: 420px; border-radius: 28px; overflow: hidden; }
 
       .hero-photo-frame { max-width: 360px; }
 
@@ -951,7 +963,7 @@
     </div>
   </div>
 
-  <section class="section">
+  <section class="section reveal">
     <div class="container">
       <div class="about-grid">
         <div class="about-photo-card">
@@ -963,20 +975,19 @@
           <p class="section-label">Quem está por trás do guia</p>
           <h2 class="title-lg">Vanessa Goulart</h2>
 
-          <p class="lead-text">Nutricionista especialista em nutrição infantil, alergias alimentares e desenvolvimento alimentar.</p>
-          <p class="body-text">Além de nutricionista infantil, Vanessa também vive a maternidade na prática e compartilha sua rotina com milhares de mães todos os dias.</p>
-          <p class="body-text">Foi vivendo isso de perto, entre a teoria e a vida real, que esse guia nasceu.</p>
-          <p class="body-text">Aqui você não vai encontrar só informação. Vai encontrar orientação prática, acolhedora e possível de aplicar no dia a dia.</p>
+          <p class="lead-text">Nutricionista especialista em nutrição infantil — e mãe que já viveu essa fase com todas as dúvidas que você está sentindo agora.</p>
+          <p class="body-text">Vanessa acompanha milhares de mães todos os dias e sabe exatamente o que paralisa na hora de começar: o medo de errar, o excesso de informação e a sensação de que nunca é suficiente.</p>
+          <p class="body-text">Esse guia nasceu pra mudar isso. Pra você chegar na introdução alimentar sentindo que sabe o que está fazendo — com calma, com segurança e sem culpa.</p>
 
           <div class="about-highlight">
-            “Um guia direto, seguro e sem terrorismo, feito por quem vive isso todos os dias.”
+            "Você não precisa saber tudo. Precisa só ter a orientação certa."
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" style="padding-top: 8px;">
+  <section class="section reveal" style="padding-top: 8px;">
     <div class="container">
       <div class="emotion-section">
         <div class="emotion-grid">
@@ -988,14 +999,14 @@
         <div>
           <p class="body-text">Muitas mães chegam nessa fase com medo, dúvidas e a sensação de não saber por onde começar.</p>
           <p class="body-text">Esse guia foi pensado para organizar a informação e te dar mais clareza, segurança e tranquilidade no dia a dia.</p>
-          <p class="break-quote">Você não precisa saber tudo. Precisa só ter o guia certo.</p>
+          <p class="break-quote">A insegurança não some com mais pesquisa. Some com a orientação certa.</p>
         </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" style="padding-top: 26px;">
+  <section class="section reveal" style="padding-top: 26px;">
     <div class="container">
       <div class="content-shell">
         <div class="content-header">
@@ -1039,7 +1050,7 @@
     </div>
   </section>
 
-  <section class="section" style="padding-top: 26px;">
+  <section class="section reveal" style="padding-top: 26px;">
     <div class="container">
       <div class="forwho-shell">
         <div class="forwho-grid">
@@ -1073,7 +1084,7 @@
     </div>
   </section>
 
-  <section class="section" style="padding-top: 26px;">
+  <section class="section reveal" style="padding-top: 26px;">
     <div class="container">
       <div class="proof-grid">
         <div>
@@ -1097,7 +1108,7 @@
     </div>
   </section>
 
-  <section class="section" id="lista" style="padding-top: 26px;">
+  <section class="section reveal" id="lista" style="padding-top: 26px;">
     <div class="container">
       <div class="form-shell">
         <div class="form-grid">
@@ -1153,6 +1164,19 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
 
 </body>
 </html>
