@@ -8,16 +8,17 @@
 
   <style>
     :root {
-      --green-dark: #2D4A35;
-      --green-mid: #3D6147;
-      --cream: #F5EFE4;
-      --cream-dark: #EDE4D6;
+      --green-dark: #314B38;
+      --green-mid: #4B6452;
+      --cream: #F7F1E8;
+      --cream-dark: #EFE5D8;
       --blush: #f0e4e0;
       --blush-dark: #dcc8c4;
-      --white: #FDFAF6;
-      --charcoal: #1E2820;
-      --text-muted: #6B7C6E;
-      --line-soft: rgba(45,74,53,0.10);
+      --white: #FFFCF8;
+      --charcoal: #22251F;
+      --text-muted: #667060;
+      --line-soft: rgba(49,75,56,0.10);
+      --shadow: 0 18px 40px rgba(28,36,30,0.08);
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -27,7 +28,7 @@
       background: var(--cream);
       color: var(--charcoal);
       font-family: 'DM Sans', sans-serif;
-      font-weight: 300;
+      font-weight: 400;
       overflow-x: hidden;
       min-height: 100vh;
     }
@@ -56,7 +57,7 @@
       width: 340px;
       height: 340px;
       border-radius: 50%;
-      background: rgba(242,217,207,0.08);
+      background: rgba(240,228,224,0.08);
       top: -120px;
       right: -80px;
       pointer-events: none;
@@ -68,18 +69,18 @@
       width: 220px;
       height: 220px;
       border-radius: 50%;
-      border: 1px solid rgba(242,217,207,0.10);
+      border: 1px solid rgba(240,228,224,0.10);
       bottom: -80px;
       left: -60px;
       pointer-events: none;
     }
 
     .topline {
-      font-size: 11px;
-      letter-spacing: 0.2em;
+      font-size: 10px;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       opacity: 0.6;
-      font-weight: 400;
+      font-weight: 500;
       position: relative;
       z-index: 1;
     }
@@ -95,17 +96,20 @@
     }
 
     .tag {
-      display: inline-block;
-      background: var(--blush);
-      color: var(--green-dark);
-      font-size: 11px;
-      letter-spacing: 0.16em;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(240,228,224,0.14);
+      border: 1px solid rgba(255,252,248,0.12);
+      color: var(--cream);
       text-transform: uppercase;
-      padding: 8px 18px;
-      border-radius: 40px;
-      margin-bottom: 28px;
+      letter-spacing: 0.18em;
+      font-size: 10px;
+      font-weight: 600;
+      margin-bottom: 26px;
       width: fit-content;
-      font-weight: 500;
     }
 
     h1 {
@@ -122,12 +126,11 @@
     .subtitle {
       font-size: 15px;
       font-weight: 400;
-      letter-spacing: 0.02em;
       color: var(--cream);
-      opacity: 0.9;
+      opacity: 0.88;
       margin-bottom: 22px;
       max-width: 520px;
-      line-height: 1.8;
+      line-height: 1.82;
     }
 
     .desc {
@@ -143,25 +146,28 @@
     }
 
     .cta-btn {
-      display: inline-block;
-      background: var(--blush);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--cream);
       color: var(--green-dark);
       font-family: 'DM Sans', sans-serif;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 600;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      padding: 16px 36px;
-      border-radius: 4px;
+      padding: 15px 30px;
+      border-radius: 999px;
       text-decoration: none;
-      transition: background 0.3s, transform 0.2s;
+      transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
       width: fit-content;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.14);
     }
 
     .cta-btn:hover {
-      background: var(--blush-dark);
+      background: var(--blush);
       transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.18);
     }
 
     .mini {
@@ -177,7 +183,7 @@
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.15rem;
       font-style: italic;
-      color: rgba(245,239,228,0.82);
+      color: rgba(247,241,232,0.72);
     }
 
     .right {
@@ -191,23 +197,24 @@
     }
 
     .card {
-      background: rgba(253,250,246,0.92);
+      background: rgba(255,252,248,0.92);
       backdrop-filter: blur(2px);
-      border-radius: 12px;
+      border-radius: 24px;
       padding: 40px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      box-shadow: var(--shadow);
       max-width: 470px;
       width: 100%;
-      border: 1px solid rgba(45,74,53,0.05);
+      border: 1px solid rgba(49,75,56,0.08);
     }
 
     .section-label {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.18em;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: var(--green-mid);
-      margin-bottom: 20px;
+      color: var(--green-dark);
+      opacity: 0.8;
+      margin-bottom: 16px;
     }
 
     .card h2 {
@@ -215,14 +222,14 @@
       font-size: clamp(2rem, 3vw, 2.8rem);
       font-weight: 500;
       font-style: italic;
-      line-height: 1.15;
+      line-height: 1.12;
       margin-bottom: 18px;
       color: var(--green-dark);
     }
 
     .card p {
       font-size: 14.5px;
-      line-height: 1.85;
+      line-height: 1.82;
       color: var(--text-muted);
       margin-bottom: 14px;
     }
@@ -238,7 +245,7 @@
       gap: 14px;
       align-items: flex-start;
       padding: 12px 0;
-      border-bottom: 1px solid rgba(45,74,53,0.08);
+      border-bottom: 1px solid rgba(49,75,56,0.08);
       font-size: 14px;
       line-height: 1.7;
       color: var(--green-dark);
@@ -253,7 +260,7 @@
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.1rem;
       font-style: italic;
-      opacity: 0.5;
+      opacity: 0.48;
       width: 20px;
       flex-shrink: 0;
       margin-top: 1px;
@@ -275,12 +282,72 @@
       font-size: 12px;
       color: var(--green-mid);
       text-decoration: none;
-      opacity: 0.75;
+      opacity: 0.65;
     }
 
     .back-link:hover {
       opacity: 1;
       text-decoration: underline;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--charcoal);
+      color: var(--cream);
+      padding: 52px 56px 36px;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    .footer-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-style: italic;
+      font-weight: 500;
+      color: var(--cream);
+      margin-bottom: 6px;
+      opacity: 0.92;
+    }
+
+    .footer-role {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0.38;
+      margin-bottom: 28px;
+    }
+
+    .footer-divider {
+      width: 40px;
+      height: 1px;
+      background: rgba(247,241,232,0.15);
+      margin: 0 auto 24px;
+    }
+
+    .footer-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .footer-stack span { opacity: 0.38; }
+
+    .footer-insta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--cream);
+      opacity: 0.55;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .footer-insta:hover { opacity: 1; }
+
+    .footer-credit {
+      opacity: 0.26;
+      font-size: 11px;
     }
 
     @keyframes fadeUp {
@@ -304,6 +371,10 @@
 
       .card {
         padding: 28px 22px;
+      }
+
+      footer {
+        padding: 40px 24px 28px;
       }
     }
   </style>
@@ -373,6 +444,20 @@
       </div>
     </section>
   </main>
+
+  <footer>
+    <p class="footer-name">Vanessa Goulart</p>
+    <p class="footer-role">Nutricionista especialista em nutrição infantil</p>
+    <div class="footer-divider"></div>
+    <div class="footer-stack">
+      <a href="https://instagram.com/vanessagoulart_nutri" target="_blank" class="footer-insta">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        @vanessagoulart_nutri
+      </a>
+      <span>© 2026 Vanessa Goulart · Todos os direitos reservados</span>
+      <span class="footer-credit">Design & desenvolvimento por Loany Dias</span>
+    </div>
+  </footer>
 
 </body>
 </html>
