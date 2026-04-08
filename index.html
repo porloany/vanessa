@@ -58,8 +58,8 @@
       letter-spacing: 0.24em;
       text-transform: uppercase;
       color: var(--green-dark);
-      opacity: 0.8;
-      margin-bottom: 16px;
+      opacity: 1;
+      margin-bottom: 12px;
       font-weight: 600;
     }
 
@@ -95,6 +95,29 @@
       color: var(--muted);
       font-weight: 300;
       margin-bottom: 8px;
+    }
+
+    /* texto de destaque dentro de seções — maior que body, menor que título */
+    .lead-text {
+      font-size: 17px;
+      line-height: 1.72;
+      color: var(--charcoal);
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+
+    /* frase de quebra de ritmo — citação ou frase impactante */
+    .break-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.5rem, 2.4vw, 2rem);
+      font-style: italic;
+      font-weight: 500;
+      color: var(--green-dark);
+      line-height: 1.4;
+      letter-spacing: -0.01em;
+      margin-top: 18px;
+      padding-left: 18px;
+      border-left: 2px solid var(--blush-dark, #dcc8c4);
     }
 
     .cta-btn {
@@ -944,7 +967,7 @@
           <p class="section-label">Quem está por trás do guia</p>
           <h2 class="title-lg">Vanessa Goulart</h2>
 
-          <p class="body-text">Nutricionista especialista em nutrição infantil, alergias alimentares e desenvolvimento alimentar.</p>
+          <p class="lead-text">Nutricionista especialista em nutrição infantil, alergias alimentares e desenvolvimento alimentar.</p>
           <p class="body-text">Além de nutricionista infantil, Vanessa também vive a maternidade na prática e compartilha sua rotina com milhares de mães todos os dias.</p>
           <p class="body-text">Foi vivendo isso de perto, entre a teoria e a vida real, que esse guia nasceu.</p>
           <p class="body-text">Aqui você não vai encontrar só informação. Vai encontrar orientação prática, acolhedora e possível de aplicar no dia a dia.</p>
@@ -969,6 +992,7 @@
         <div>
           <p class="body-text">Muitas mães chegam nessa fase com medo, dúvidas e a sensação de não saber por onde começar.</p>
           <p class="body-text">Esse guia foi pensado para organizar a informação e te dar mais clareza, segurança e tranquilidade no dia a dia.</p>
+          <p class="break-quote">Você não precisa saber tudo. Precisa só ter o guia certo.</p>
         </div>
         </div>
       </div>
@@ -985,7 +1009,7 @@
           </div>
 
           <div>
-            <p class="body-text">Sem excesso de informação, sem complicação e sem te deixar ainda mais confusa.</p>
+            <p class="lead-text">Sem excesso de informação, sem complicação e sem te deixar ainda mais confusa.</p>
             <p class="body-text"><strong>Você vai sair daqui sabendo exatamente o que fazer, com segurança de verdade.</strong></p>
           </div>
         </div>
