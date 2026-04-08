@@ -166,10 +166,34 @@
     /* HERO */
     .hero-wrap {
       padding: 28px 0 22px;
-      background:
-        radial-gradient(circle at 15% 20%, rgba(216,198,122,0.12), transparent 28%),
-        radial-gradient(circle at 85% 80%, rgba(217,183,174,0.12), transparent 26%),
-        var(--cream);
+      background: var(--cream);
+      position: relative;
+    }
+
+    .hero-wrap::before {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      top: 20px;
+      left: 20px;
+      pointer-events: none;
+      background-image: radial-gradient(circle, rgba(46,74,53,0.12) 1.2px, transparent 1.2px);
+      background-size: 16px 16px;
+      opacity: 0.6;
+    }
+
+    .hero-wrap::after {
+      content: "";
+      position: absolute;
+      width: 140px;
+      height: 140px;
+      bottom: 20px;
+      right: 20px;
+      pointer-events: none;
+      background-image: radial-gradient(circle, rgba(46,74,53,0.10) 1.2px, transparent 1.2px);
+      background-size: 16px 16px;
+      opacity: 0.5;
     }
 
     .hero-shell {
@@ -209,13 +233,14 @@
     .hero-left::before {
       content: "";
       position: absolute;
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      background: rgba(216,198,122,0.14);
-      top: -40px;
-      left: -40px;
+      width: 200px;
+      height: 200px;
+      top: 24px;
+      left: 24px;
       pointer-events: none;
+      background-image: radial-gradient(circle, rgba(46,74,53,0.18) 1.2px, transparent 1.2px);
+      background-size: 16px 16px;
+      opacity: 0.7;
     }
 
     .hero-left::after {
@@ -223,11 +248,12 @@
       position: absolute;
       width: 120px;
       height: 120px;
-      border-radius: 50%;
-      background: rgba(217,183,174,0.18);
       bottom: 32px;
       right: 32px;
       pointer-events: none;
+      background-image: radial-gradient(circle, rgba(46,74,53,0.14) 1.2px, transparent 1.2px);
+      background-size: 16px 16px;
+      opacity: 0.6;
     }
 
     .hero-badge {
@@ -236,8 +262,8 @@
       gap: 8px;
       padding: 8px 14px;
       border-radius: 999px;
-      background: rgba(216,198,122,0.18);
-      border: 1px solid rgba(49,75,56,0.08);
+      background: rgba(49,75,56,0.08);
+      border: 1px solid rgba(49,75,56,0.18);
       color: var(--green-dark);
       text-transform: uppercase;
       letter-spacing: 0.18em;
@@ -722,13 +748,14 @@
     .form-shell::before {
       content: "";
       position: absolute;
-      width: 260px;
-      height: 260px;
-      border-radius: 50%;
-      background: rgba(216,198,122,0.12);
-      top: -100px;
-      right: -40px;
+      width: 200px;
+      height: 200px;
+      top: 24px;
+      right: 24px;
       pointer-events: none;
+      background-image: radial-gradient(circle, rgba(247,241,232,0.22) 1.2px, transparent 1.2px);
+      background-size: 16px 16px;
+      opacity: 0.7;
     }
 
     .form-grid {
