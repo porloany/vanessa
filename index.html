@@ -332,12 +332,11 @@
       bottom: 26px;
       background: rgba(255,252,248,0.92);
       border: 1px solid rgba(49,75,56,0.08);
-      padding: 12px 14px;
+      padding: 14px 16px;
       border-radius: 14px;
-      max-width: 220px;
+      max-width: 230px;
       box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-      font-size: 12px;
-      line-height: 1.65;
+      line-height: 1.5;
       color: var(--green-dark);
     }
 
@@ -348,6 +347,16 @@
       text-transform: uppercase;
       letter-spacing: 0.16em;
       color: var(--green-mid);
+      font-weight: 600;
+    }
+
+    .hero-note em {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      font-weight: 500;
+      color: var(--green-dark);
+      letter-spacing: -0.01em;
     }
 
     /* STRIP */
@@ -475,7 +484,7 @@
     .emotion-section {
       background: var(--cream-2);
       border-radius: 30px;
-      padding: 36px 48px;
+      padding: 44px 54px;
       border: 1px solid rgba(49,75,56,0.06);
       box-shadow: var(--shadow);
     }
@@ -625,6 +634,32 @@
       grid-template-columns: 1fr 0.92fr;
       gap: 24px;
       align-items: center;
+    }
+
+    .proof-stat {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .proof-stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.5rem, 6vw, 5rem);
+      font-weight: 500;
+      font-style: italic;
+      color: var(--green-dark);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+
+    .proof-stat-label {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 300;
+      line-height: 1.5;
+      max-width: 240px;
     }
 
     .proof-box {
@@ -794,31 +829,6 @@
       font-size: 12px;
     }
 
-    .footer-stack span { opacity: 0.38; }
-
-    .footer-insta {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--cream);
-      opacity: 0.55;
-      text-decoration: none;
-      font-size: 12px;
-      transition: opacity 0.2s;
-    }
-
-    .footer-insta:hover { opacity: 1; }
-
-    .footer-credit {
-      opacity: 0.26;
-      font-size: 11px;
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
     /* RESPONSIVO */
     @media (max-width: 980px) {
       .hero-main,
@@ -829,9 +839,7 @@
         grid-template-columns: 1fr;
       }
 
-      .hero-main {
-        min-height: auto;
-      }
+      .hero-main { min-height: auto; }
 
       .hero-shell,
       .content-shell,
@@ -840,51 +848,38 @@
         border-radius: 22px;
       }
 
-      .hero-main {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-right {
-        padding: 26px 20px 34px;
-      }
+      .hero-right { padding: 26px 20px 34px; }
 
       .hero-left,
       .about-text-card,
       .content-shell,
       .forwho-shell,
-      .form-shell {
+      .form-shell,
+      .emotion-section {
         padding: 34px 22px;
       }
 
-      .section {
-        padding: 54px 0;
-      }
+      .section { padding: 54px 0; }
 
-      .cards-grid,
-      .topicos {
-        grid-template-columns: 1fr;
-      }
+      .section + .section { padding-top: 0; }
 
-      .about-photo-card {
-        min-height: 420px;
-      }
+      .proof-stat { gap: 10px; }
 
-      .hero-photo-frame {
-        max-width: 360px;
-      }
+      .proof-stat-number { font-size: 2.8rem; }
 
-      .container {
-        width: min(100% - 28px, 1180px);
-      }
+      .proof-stat-label { max-width: 200px; }
 
-      .footer-stack {
-        align-items: center;
-        text-align: center;
-      }
+      .about-photo-card { min-height: 420px; }
 
-      footer {
-        padding: 28px 0;
-      }
+      .hero-photo-frame { max-width: 360px; }
+
+      .container { width: min(100% - 28px, 1180px); }
+
+      .footer-stack { align-items: center; text-align: center; }
+
+      footer { padding: 28px 0; }
+
+      .cards-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -931,7 +926,8 @@
               <img src="vanessa-gravida.png" alt="Vanessa Goulart grávida"/>
               <div class="hero-note">
                 <strong>Orientação real</strong>
-                de quem também vive a maternidade na prática
+                <em>de quem também vive a maternidade na prática</em>
+              </div>
               </div>
             </div>
           </div>
@@ -1082,6 +1078,10 @@
       <div class="proof-grid">
         <div>
           <p class="section-label">Orientação com acolhimento</p>
+          <div class="proof-stat">
+            <span class="proof-stat-number">20 mil</span>
+            <span class="proof-stat-label">mães acompanham a Vanessa todos os dias</span>
+          </div>
           <h2 class="title-md">Um guia criado por quem une conhecimento técnico com maternidade real</h2>
           <p class="body-text" style="margin-top: 14px;">Esse guia foi pensado para transformar a insegurança do começo em mais clareza no dia a dia.</p>
           <p class="body-text">Com uma linguagem simples, prática e sem terrorismo, você entende o que fazer e se sente mais segura em cada etapa.</p>
