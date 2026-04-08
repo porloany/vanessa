@@ -4,20 +4,21 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Obrigada – Vanessa Goulart</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 
   <style>
     :root {
       --green-dark: #314B38;
+      --green-deep: #26372A;
       --green-mid: #4B6452;
       --cream: #F7F1E8;
-      --cream-dark: #EFE5D8;
+      --cream-2: #EFE5D8;
       --blush: #f0e4e0;
       --blush-dark: #dcc8c4;
       --white: #FFFCF8;
       --charcoal: #22251F;
-      --text-muted: #667060;
-      --line-soft: rgba(49,75,56,0.10);
+      --muted: #667060;
+      --line: rgba(49,75,56,0.12);
       --shadow: 0 18px 40px rgba(28,36,30,0.08);
     }
 
@@ -33,66 +34,81 @@
       min-height: 100vh;
     }
 
-    .wrap {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+    .container {
+      width: min(1180px, calc(100% - 48px));
+      margin: 0 auto;
     }
 
+    /* WRAP */
+    .page-wrap {
+      padding: 28px 0 22px;
+      min-height: calc(100vh - 160px);
+      background:
+        radial-gradient(circle at 15% 20%, rgba(216,198,122,0.12), transparent 28%),
+        radial-gradient(circle at 85% 80%, rgba(240,228,224,0.18), transparent 26%),
+        var(--cream);
+    }
+
+    .page-shell {
+      border: 1px solid rgba(49,75,56,0.10);
+      background: rgba(255,252,248,0.55);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      border-radius: 30px;
+    }
+
+    .page-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 28px;
+      border-bottom: 1px solid var(--line);
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--green-dark);
+    }
+
+    .page-main {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      min-height: 680px;
+    }
+
+    /* LEFT */
     .left {
       background: var(--green-dark);
       color: var(--cream);
-      padding: 64px 56px;
+      padding: 62px 54px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: center;
       position: relative;
       overflow: hidden;
-      animation: fadeUp 0.9s ease both;
     }
 
     .left::before {
       content: "";
       position: absolute;
-      width: 340px;
-      height: 340px;
+      width: 260px;
+      height: 260px;
       border-radius: 50%;
-      background: rgba(240,228,224,0.08);
-      top: -120px;
-      right: -80px;
+      background: rgba(240,228,224,0.07);
+      top: -80px;
+      right: -60px;
       pointer-events: none;
     }
 
     .left::after {
       content: "";
       position: absolute;
-      width: 220px;
-      height: 220px;
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
-      border: 1px solid rgba(240,228,224,0.10);
-      bottom: -80px;
-      left: -60px;
+      background: rgba(216,198,122,0.08);
+      bottom: 40px;
+      left: -40px;
       pointer-events: none;
-    }
-
-    .topline {
-      font-size: 10px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      opacity: 0.6;
-      font-weight: 500;
-      position: relative;
-      z-index: 1;
-    }
-
-    .left-main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 48px 0;
-      position: relative;
-      z-index: 1;
     }
 
     .tag {
@@ -110,40 +126,45 @@
       font-weight: 600;
       margin-bottom: 26px;
       width: fit-content;
+      position: relative;
+      z-index: 1;
     }
 
-    h1 {
+    .left h1 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.8rem, 5vw, 4.8rem);
+      font-size: clamp(2.6rem, 4.5vw, 4.2rem);
       font-weight: 500;
       font-style: italic;
       line-height: 1.05;
       color: var(--cream);
       margin-bottom: 18px;
-      max-width: 620px;
+      max-width: 560px;
+      position: relative;
+      z-index: 1;
     }
 
-    .subtitle {
+    .left .subtitle {
       font-size: 15px;
-      font-weight: 400;
+      line-height: 1.82;
       color: var(--cream);
       opacity: 0.88;
-      margin-bottom: 22px;
-      max-width: 520px;
-      line-height: 1.82;
+      margin-bottom: 20px;
+      max-width: 480px;
+      position: relative;
+      z-index: 1;
     }
 
-    .desc {
+    .left .desc {
       font-size: 14px;
-      line-height: 1.9;
-      opacity: 0.8;
-      max-width: 500px;
-      margin-bottom: 28px;
+      line-height: 1.88;
+      opacity: 0.78;
+      max-width: 480px;
+      margin-bottom: 32px;
+      position: relative;
+      z-index: 1;
     }
 
-    .desc p {
-      margin-bottom: 12px;
-    }
+    .left .desc p { margin-bottom: 10px; }
 
     .cta-btn {
       display: inline-flex;
@@ -162,6 +183,8 @@
       transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
       width: fit-content;
       box-shadow: 0 10px 24px rgba(0,0,0,0.14);
+      position: relative;
+      z-index: 1;
     }
 
     .cta-btn:hover {
@@ -172,28 +195,31 @@
 
     .mini {
       font-size: 12px;
-      opacity: 0.58;
+      opacity: 0.55;
       margin-top: 14px;
       line-height: 1.7;
-      max-width: 430px;
+      max-width: 420px;
+      position: relative;
+      z-index: 1;
     }
 
     .signature {
-      margin-top: 26px;
+      margin-top: 32px;
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.15rem;
       font-style: italic;
-      color: rgba(247,241,232,0.72);
+      color: rgba(247,241,232,0.65);
+      position: relative;
+      z-index: 1;
     }
 
+    /* RIGHT */
     .right {
-      background: linear-gradient(180deg, var(--cream-dark) 0%, var(--cream) 100%);
+      background: linear-gradient(180deg, var(--cream-2) 0%, var(--cream) 100%);
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 56px;
-      position: relative;
-      animation: fadeUp 1s ease 0.15s both;
+      padding: 52px 48px;
     }
 
     .card {
@@ -202,7 +228,7 @@
       border-radius: 24px;
       padding: 40px;
       box-shadow: var(--shadow);
-      max-width: 470px;
+      max-width: 440px;
       width: 100%;
       border: 1px solid rgba(49,75,56,0.08);
     }
@@ -219,24 +245,24 @@
 
     .card h2 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 3vw, 2.8rem);
+      font-size: clamp(1.8rem, 2.8vw, 2.6rem);
       font-weight: 500;
       font-style: italic;
       line-height: 1.12;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
       color: var(--green-dark);
     }
 
     .card p {
       font-size: 14.5px;
       line-height: 1.82;
-      color: var(--text-muted);
+      color: var(--muted);
       margin-bottom: 14px;
     }
 
     .steps {
       margin-top: 22px;
-      border-top: 1px solid var(--line-soft);
+      border-top: 1px solid rgba(49,75,56,0.10);
       padding-top: 18px;
     }
 
@@ -251,10 +277,7 @@
       color: var(--green-dark);
     }
 
-    .step:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
+    .step:last-child { border-bottom: none; padding-bottom: 0; }
 
     .step-num {
       font-family: 'Cormorant Garamond', serif;
@@ -269,7 +292,7 @@
     .card-note {
       margin-top: 18px;
       padding-top: 16px;
-      border-top: 1px solid var(--line-soft);
+      border-top: 1px solid rgba(49,75,56,0.10);
       font-size: 13px;
       line-height: 1.75;
       color: var(--green-mid);
@@ -285,16 +308,13 @@
       opacity: 0.65;
     }
 
-    .back-link:hover {
-      opacity: 1;
-      text-decoration: underline;
-    }
+    .back-link:hover { opacity: 1; text-decoration: underline; }
 
     /* FOOTER */
     footer {
       background: var(--charcoal);
       color: var(--cream);
-      padding: 52px 56px 36px;
+      padding: 52px 0 36px;
       text-align: center;
       font-size: 12px;
     }
@@ -345,117 +365,110 @@
 
     .footer-insta:hover { opacity: 1; }
 
-    .footer-credit {
-      opacity: 0.26;
-      font-size: 11px;
-    }
+    .footer-credit { opacity: 0.26; font-size: 11px; }
 
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(24px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @media (max-width: 768px) {
-      .wrap {
-        grid-template-columns: 1fr;
-      }
-
-      .left,
-      .right {
-        padding: 48px 28px;
-      }
-
-      .left-main {
-        padding: 36px 0;
-      }
-
-      .card {
-        padding: 28px 22px;
-      }
-
-      footer {
-        padding: 40px 24px 28px;
-      }
+    @media (max-width: 980px) {
+      .page-main { grid-template-columns: 1fr; min-height: auto; }
+      .page-shell { border-radius: 22px; }
+      .left { padding: 48px 28px; }
+      .right { padding: 40px 24px; }
+      .card { padding: 28px 22px; }
+      footer { padding: 40px 24px 28px; }
+      .footer-stack { align-items: center; }
     }
   </style>
 </head>
 <body>
 
-  <main class="wrap">
-    <section class="left">
-      <div class="topline">Vanessa Goulart · Nutricionista & Mamãe</div>
+  <div class="page-wrap">
+    <div class="container">
+      <div class="page-shell">
 
-      <div class="left-main">
-        <div class="tag">Cadastro confirmado</div>
-
-        <h1>Seu acesso antecipado está quase garantido</h1>
-
-        <p class="subtitle">
-          Agora falta só um passo para acompanhar tudo de forma mais próxima e receber os avisos em primeira mão.
-        </p>
-
-        <div class="desc">
-          <p>Entre no grupo VIP do WhatsApp para receber a abertura antes de todo mundo, além das informações mais importantes sobre o lançamento.</p>
-          <p>É a forma mais simples de acompanhar tudo com prioridade, leveza e mais proximidade.</p>
+        <div class="page-topbar">
+          <span>Vanessa Goulart</span>
+          <span>Nutricionista infantil · cadastro confirmado</span>
         </div>
 
-        <a href="SEU_LINK_DO_GRUPO" class="cta-btn" target="_blank" rel="noopener noreferrer">
-          Entrar no grupo VIP
-        </a>
+        <div class="page-main">
+          <div class="left">
+            <div class="tag">Cadastro confirmado</div>
 
-        <p class="mini">
-          Grupo silencioso, apenas com avisos importantes. Sem conversa solta e sem excesso de mensagens. 🤍
-        </p>
+            <h1>Seu acesso antecipado está quase garantido</h1>
 
-        <div class="signature">com carinho, Vanessa</div>
-      </div>
+            <p class="subtitle">
+              Agora falta só um passo para acompanhar tudo de forma mais próxima e receber os avisos em primeira mão.
+            </p>
 
-      <div></div>
-    </section>
+            <div class="desc">
+              <p>Entre no grupo VIP do WhatsApp para receber a abertura antes de todo mundo, além das informações mais importantes sobre o lançamento.</p>
+              <p>É a forma mais simples de acompanhar tudo com prioridade, leveza e mais proximidade.</p>
+            </div>
 
-    <section class="right">
-      <div class="card">
-        <p class="section-label">O que acontece agora</p>
-        <h2>Você já deu o primeiro passo</h2>
+            <a href="SEU_LINK_DO_GRUPO" class="cta-btn" target="_blank" rel="noopener noreferrer">
+              Entrar no grupo VIP
+            </a>
 
-        <p>Seu email foi cadastrado com sucesso.</p>
-        <p>Agora, entrando no grupo VIP, você acompanha o lançamento de forma mais próxima e não corre o risco de perder o melhor momento.</p>
+            <p class="mini">
+              Grupo silencioso, apenas com avisos importantes. Sem conversa solta e sem excesso de mensagens. 🤍
+            </p>
 
-        <div class="steps">
-          <div class="step">
-            <span class="step-num">01.</span>
-            <span>Entre no grupo VIP do WhatsApp</span>
+            <div class="signature">com carinho, Vanessa</div>
           </div>
-          <div class="step">
-            <span class="step-num">02.</span>
-            <span>Receba os avisos da abertura em primeira mão</span>
-          </div>
-          <div class="step">
-            <span class="step-num">03.</span>
-            <span>Acompanhe tudo com prioridade e aproveite as melhores condições</span>
+
+          <div class="right">
+            <div class="card">
+              <p class="section-label">O que acontece agora</p>
+              <h2>Você já deu o primeiro passo</h2>
+
+              <p>Seu email foi cadastrado com sucesso.</p>
+              <p>Entrando no grupo VIP, você acompanha o lançamento de forma mais próxima e garante a condição especial antes da abertura pública.</p>
+
+              <div class="steps">
+                <div class="step">
+                  <span class="step-num">01.</span>
+                  <span>Entre no grupo VIP do WhatsApp</span>
+                </div>
+                <div class="step">
+                  <span class="step-num">02.</span>
+                  <span>Receba o aviso da abertura em primeira mão</span>
+                </div>
+                <div class="step">
+                  <span class="step-num">03.</span>
+                  <span>Garanta o melhor preço antes da divulgação pública</span>
+                </div>
+              </div>
+
+              <p class="card-note">
+                Esse espaço foi pensado para deixar a experiência mais organizada, acolhedora e próxima de você.
+              </p>
+
+              <a href="index.html" class="back-link">Voltar para a página inicial</a>
+            </div>
           </div>
         </div>
 
-        <p class="card-note">
-          Esse espaço foi pensado para deixar a experiência mais organizada, acolhedora e próxima de você.
-        </p>
-
-        <a href="index.html" class="back-link">Voltar para a página inicial</a>
       </div>
-    </section>
-  </main>
+    </div>
+  </div>
 
   <footer>
-    <p class="footer-name">Vanessa Goulart</p>
-    <p class="footer-role">Nutricionista especialista em nutrição infantil</p>
-    <div class="footer-divider"></div>
-    <div class="footer-stack">
-      <a href="https://instagram.com/vanessagoulart_nutri" target="_blank" class="footer-insta">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        @vanessagoulart_nutri
-      </a>
-      <span>© 2026 Vanessa Goulart · Todos os direitos reservados</span>
-      <span class="footer-credit">Design & desenvolvimento por Loany Dias</span>
+    <div class="container">
+      <p class="footer-name">Vanessa Goulart</p>
+      <p class="footer-role">Nutricionista especialista em nutrição infantil</p>
+      <div class="footer-divider"></div>
+      <div class="footer-stack">
+        <a href="https://instagram.com/vanessagoulart_nutri" target="_blank" class="footer-insta">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          @vanessagoulart_nutri
+        </a>
+        <span>© 2026 Vanessa Goulart · Todos os direitos reservados</span>
+        <span class="footer-credit">Design & desenvolvimento por Loany Dias</span>
+      </div>
     </div>
   </footer>
 
