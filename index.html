@@ -322,9 +322,9 @@
       bottom: 26px;
       background: rgba(255,252,248,0.92);
       border: 1px solid rgba(49,75,56,0.08);
-      padding: 14px 16px;
+      padding: 12px 14px;
       border-radius: 14px;
-      max-width: 230px;
+      max-width: 200px;
       box-shadow: 0 10px 20px rgba(0,0,0,0.08);
       line-height: 1.5;
       color: var(--green-dark);
@@ -688,6 +688,113 @@
       margin-bottom: 12px;
     }
 
+    /* DEPOIMENTOS */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .testimonial-card {
+      background: #e9f5e9;
+      border-radius: 20px;
+      padding: 24px;
+      border: 1px solid rgba(49,75,56,0.08);
+      box-shadow: 0 8px 20px rgba(28,36,30,0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      position: relative;
+    }
+
+    .testimonial-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .testimonial-photo {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--cream-2);
+      border: 1px solid rgba(49,75,56,0.10);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .testimonial-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: #1a3a1f;
+    }
+
+    .testimonial-bubble {
+      background: #ffffff;
+      border-radius: 0 14px 14px 14px;
+      padding: 12px 14px;
+      font-size: 13.5px;
+      line-height: 1.72;
+      color: #2a2a2a;
+      position: relative;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+    }
+
+    .testimonial-time {
+      font-size: 10px;
+      color: #8a9a8a;
+      text-align: right;
+      margin-top: 4px;
+    }
+
+    /* CONTADOR */
+    .countdown-wrap {
+      display: flex;
+      gap: 6px;
+      margin-top: 8px;
+      align-items: baseline;
+    }
+
+    .countdown-label {
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--green-dark);
+      opacity: 0.7;
+      margin-bottom: 8px;
+    }
+
+    .countdown-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .countdown-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 500;
+      color: var(--green-dark);
+      line-height: 1;
+    }
+
+    .countdown-unit {
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    .countdown-sep {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      color: var(--green-dark);
+      opacity: 0.25;
+      padding: 0 2px;
+      margin-bottom: 14px;
+    }
+
     /* FORM */
     .form-shell {
       background: var(--green-dark);
@@ -904,6 +1011,8 @@
 
       .cards-grid { grid-template-columns: 1fr; }
 
+      .testimonials-grid { grid-template-columns: 1fr; }
+
       .topbar-right { display: none; }
     }
   </style>
@@ -922,7 +1031,7 @@
           <div class="hero-left">
             <div class="hero-badge">E-book completo • Lista VIP aberta</div>
 
-            <h1 class="title-xl">Como começar a introdução alimentar com mais tranquilidade, sem medo e sem confusão</h1>
+            <h1 class="title-xl">Como começar a <span style="color: #c4907a !important;">introdução alimentar</span> com mais tranquilidade, sem medo e sem confusão</h1>
 
             <p class="hero-subtitle">
               Um guia simples e prático para você saber exatamente o que fazer nessa fase, com orientação acolhedora e aplicável na vida real — sem precisar pesquisar em mil lugares diferentes.
@@ -931,6 +1040,22 @@
             <p class="hero-urgencia">→ Preço especial de lançamento<br>→ Só para quem entrar na lista agora</p>
 
             <a href="#lista" class="cta-btn">Quero começar com segurança</a>
+
+            <div style="margin-top: 40px;">
+              <p class="countdown-label">
+                <span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#c4907a;margin-right:7px;vertical-align:middle;animation:pulse-blush 1.5s ease-in-out infinite;"></span>
+                Lançamento em
+              </p>
+              <div class="countdown-wrap">
+                <div class="countdown-block"><span class="countdown-number" id="cd-days">07</span><span class="countdown-unit">dias</span></div>
+                <span class="countdown-sep">:</span>
+                <div class="countdown-block"><span class="countdown-number" id="cd-hours">00</span><span class="countdown-unit">horas</span></div>
+                <span class="countdown-sep">:</span>
+                <div class="countdown-block"><span class="countdown-number" id="cd-mins">00</span><span class="countdown-unit">min</span></div>
+                <span class="countdown-sep">:</span>
+                <div class="countdown-block"><span class="countdown-number" id="cd-secs">00</span><span class="countdown-unit">seg</span></div>
+              </div>
+            </div>
           </div>
 
           <div class="hero-right">
@@ -1107,6 +1232,51 @@
     </div>
   </section>
 
+  <section class="section reveal" style="padding-top: 26px;">
+    <div class="container">
+      <div class="forwho-shell">
+        <p class="section-label">O que estão dizendo</p>
+        <h2 class="title-md" style="margin-bottom: 28px;">Mães que já acompanham a Vanessa</h2>
+        <div class="testimonials-grid">
+
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <div class="testimonial-photo"></div>
+              <span class="testimonial-name">Nome da mãe</span>
+            </div>
+            <div class="testimonial-bubble">
+              Depoimento da mãe aqui — aguardando texto.
+              <div class="testimonial-time">✓✓ 09:42</div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <div class="testimonial-photo"></div>
+              <span class="testimonial-name">Nome da mãe</span>
+            </div>
+            <div class="testimonial-bubble">
+              Depoimento da mãe aqui — aguardando texto.
+              <div class="testimonial-time">✓✓ 14:17</div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <div class="testimonial-photo"></div>
+              <span class="testimonial-name">Nome da mãe</span>
+            </div>
+            <div class="testimonial-bubble">
+              Depoimento da mãe aqui — aguardando texto.
+              <div class="testimonial-time">✓✓ 20:05</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section reveal" id="lista" style="padding-top: 26px;">
     <div class="container">
       <div class="form-shell">
@@ -1172,6 +1342,25 @@
       });
     }, { threshold: 0.12 });
     reveals.forEach(el => observer.observe(el));
+  </script>
+
+  <script>
+    // Countdown — data de lançamento: 15 de abril de 2026
+    const launchDate = new Date('2026-04-15T00:00:00');
+    function updateCountdown() {
+      const now = new Date();
+      const diff = launchDate - now;
+      if (diff <= 0) {
+        ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id => document.getElementById(id).textContent = '00');
+        return;
+      }
+      document.getElementById('cd-days').textContent  = String(Math.floor(diff / 86400000)).padStart(2,'0');
+      document.getElementById('cd-hours').textContent = String(Math.floor((diff % 86400000) / 3600000)).padStart(2,'0');
+      document.getElementById('cd-mins').textContent  = String(Math.floor((diff % 3600000) / 60000)).padStart(2,'0');
+      document.getElementById('cd-secs').textContent  = String(Math.floor((diff % 60000) / 1000)).padStart(2,'0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
   </script>
 
 </body>
