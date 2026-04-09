@@ -129,20 +129,41 @@
 
     /* HERO */
     .hero-wrap {
-      background: var(--cream-2);
-      padding: 0;
+      padding: 28px 0 22px;
+      background: var(--cream);
+    }
+
+    .hero-shell {
+      border: 1px solid rgba(49,75,56,0.10);
+      background: transparent;
+      box-shadow: var(--shadow);
       overflow: hidden;
+      border-radius: 30px;
+    }
+
+    .hero-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 28px;
+      border-bottom: 1px solid var(--line);
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--green-dark);
+      background: var(--white);
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.08fr 0.92fr;
       min-height: 680px;
       align-items: stretch;
     }
 
     .hero-left {
-      padding: 64px 54px;
+      background: var(--cream-2);
+      padding: 62px 54px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -153,24 +174,24 @@
       overflow: hidden;
     }
 
-    .hero-right::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 40%;
-      height: 100%;
-      background: linear-gradient(to right, var(--cream-2), transparent);
-      z-index: 1;
-      pointer-events: none;
-    }
-
     .hero-right img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center top;
       display: block;
+    }
+
+    .hero-right::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 35%;
+      height: 100%;
+      background: linear-gradient(to right, var(--cream-2), transparent);
+      z-index: 1;
+      pointer-events: none;
     }
 
     .hero-badge {
@@ -538,40 +559,36 @@
 
   <div style="height: 58px;"></div>
 
-  <!-- TOPBAR -->
-  <div style="background: var(--white); border-bottom: 1px solid var(--line);">
-    <div class="container">
-      <div class="topbar">
-        <span>Vanessa Goulart</span>
-        <span>Nutricionista infantil · guia de introdução alimentar</span>
-      </div>
-    </div>
-  </div>
-
   <!-- HERO -->
   <div class="hero-wrap">
     <div class="container">
-      <div class="hero-grid">
-        <div class="hero-left">
-          <div class="hero-badge">E-book completo • disponível agora</div>
-          <h1 class="title-xl">Você pesquisa, pesquisa — e ainda não sabe se está fazendo certo.</h1>
-          <p class="lead-text" style="margin-top: 18px;">O problema não é falta de informação. É excesso de <span style="color:#c4907a; font-style:italic;">informação errada.</span></p>
-          <p class="body-text" style="margin-top: 10px;">Esse guia existe pra acabar com isso — e te dar a clareza que você precisava desde o início.</p>
+      <div class="hero-shell">
+        <div class="hero-topbar">
+          <span>Vanessa Goulart</span>
+          <span>Nutricionista infantil · guia de introdução alimentar</span>
+        </div>
+        <div class="hero-grid">
+          <div class="hero-left">
+            <div class="hero-badge">E-book completo • disponível agora</div>
+            <h1 class="title-xl">Você pesquisa, pesquisa — e ainda não sabe se está fazendo certo.</h1>
+            <p class="lead-text" style="margin-top: 18px;">O problema não é falta de informação. É excesso de <span style="color:#c4907a; font-style:italic;">informação errada.</span></p>
+            <p class="body-text" style="margin-top: 10px;">Esse guia existe pra acabar com isso — e te dar a clareza que você precisava desde o início.</p>
 
-          <div class="hero-cta-row">
-            <div class="hero-price-inline">
-              <span class="hero-price-from">De R$ 67</span>
-              <span class="hero-price-main">R$ 47</span>
+            <div class="hero-cta-row">
+              <div class="hero-price-inline">
+                <span class="hero-price-from">De R$ 67</span>
+                <span class="hero-price-main">R$ 47</span>
+              </div>
+              <a href="SEU_LINK_KIWIFY" target="_blank" rel="noopener noreferrer" class="cta-btn">Quero o guia agora</a>
             </div>
-            <a href="SEU_LINK_KIWIFY" target="_blank" rel="noopener noreferrer" class="cta-btn">Quero o guia agora</a>
+
+            <p class="hero-proof"><span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#c0392b;margin-right:6px;"></span> Preço de lançamento por tempo limitado</p>
+            <p class="hero-proof">🔒 Compra segura · 7 dias de garantia · acesso imediato</p>
           </div>
 
-          <p class="hero-proof"><span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#c0392b;"></span> Preço de lançamento por tempo limitado</p>
-          <p class="hero-proof">🔒 Compra segura · 7 dias de garantia · acesso imediato</p>
-        </div>
-
-        <div class="hero-right">
-          <img src="vanessa-gravida.png" alt="Vanessa Goulart"/>
+          <div class="hero-right">
+            <img src="vanessa-gravida.png" alt="Vanessa Goulart"/>
+          </div>
         </div>
       </div>
     </div>
