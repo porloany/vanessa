@@ -529,6 +529,8 @@
       .section { padding: 54px 0; }
       .container { width: min(100% - 28px, 1180px); }
       footer { padding: 28px 0; }
+      .topbar-name { display: none; }
+      .hero-topbar { justify-content: center; }
     }
   </style>
 </head>
@@ -564,7 +566,7 @@
     <div class="container">
       <div class="hero-shell">
         <div class="hero-topbar">
-          <span>Vanessa Goulart</span>
+          <span class="topbar-name">Vanessa Goulart</span>
           <span>Nutricionista infantil · guia de introdução alimentar</span>
         </div>
         <div class="hero-grid">
@@ -574,16 +576,12 @@
             <p class="lead-text" style="margin-top: 18px;">O problema não é falta de informação. É excesso de <span style="color:#c4907a; font-style:italic;">informação errada.</span></p>
             <p class="body-text" style="margin-top: 10px;">Esse guia existe pra acabar com isso — e te dar a clareza que você precisava desde o início.</p>
 
-            <div class="hero-cta-row">
-              <div class="hero-price-inline">
-                <span class="hero-price-from">De R$ 67</span>
-                <span class="hero-price-main">R$ 47</span>
-              </div>
-              <a href="SEU_LINK_KIWIFY" target="_blank" rel="noopener noreferrer" class="cta-btn">Quero o guia agora</a>
+            <div style="margin-top: 28px;">
+              <a href="#preco" class="cta-btn">Quero o guia agora</a>
             </div>
 
             <p class="hero-proof"><span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#c0392b;margin-right:6px;"></span> Preço de lançamento por tempo limitado</p>
-            <p class="hero-proof">🔒 Compra segura · 7 dias de garantia · acesso imediato</p>
+            <p class="hero-proof">🔒 Compra segura · 7 dias de garantia</p>
           </div>
 
           <div class="hero-right">
@@ -731,7 +729,7 @@
   </section>
 
   <!-- PREÇO -->
-  <section class="section reveal" style="padding-top: 0;">
+  <section class="section reveal" id="preco" style="padding-top: 0;">
     <div class="container">
       <div class="price-shell">
         <div class="price-grid">
