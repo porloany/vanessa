@@ -1338,6 +1338,12 @@
   </footer>
 
   <script>
+    // Força scroll pro topo ao carregar
+    if (window.location.hash) {
+      window.scrollTo(0, 0);
+      history.replaceState(null, '', window.location.pathname);
+    }
+
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
