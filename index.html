@@ -20,6 +20,7 @@
     :root {
       --green-dark: #2E4A35;
       --green-deep: #243A2B;
+      --green-mid: #4B6452;
       --green-soft: #A8B69E;
       --cream: #F7F1E8;
       --cream-2: #EFE5D8;
@@ -27,7 +28,8 @@
       --butter: #D8C67A;
       --white: #FFFCF8;
       --charcoal: #22251F;
-      --muted: #667060;
+      --muted: #5F695A;
+      --accent: #B88A75;
       --line: rgba(49, 75, 56, 0.12);
       --shadow: 0 18px 40px rgba(28, 36, 30, 0.08);
       --radius-xl: 28px;
@@ -37,6 +39,8 @@
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
+    .text-accent { color: var(--accent); }
 
     body {
       background: var(--cream);
@@ -696,7 +700,7 @@
     }
 
     .testimonial-card {
-      background: #e9f5e9;
+      background: #EEF3EC;
       border-radius: 20px;
       padding: 24px;
       border: 1px solid rgba(49,75,56,0.08);
@@ -797,7 +801,7 @@
 
     /* FORM */
     .form-shell {
-      background: var(--green-dark);
+      background: linear-gradient(180deg, #2A4230 0%, #243A2B 100%);
       border-radius: 32px;
       padding: 58px 54px;
       box-shadow: var(--shadow);
@@ -975,10 +979,12 @@
       width: 100% !important;
       cursor: pointer !important;
       transition: background 0.2s ease !important;
+      animation: pulse 2s ease-in-out infinite !important;
     }
 
     .ml-embedded .ml-form-embedSubmit button:hover {
       background: var(--green-deep) !important;
+      animation: none !important;
     }
 
     .ml-embedded input[type="email"] {
@@ -1064,7 +1070,7 @@
           <div class="hero-left">
             <div class="hero-badge">E-book completo • Lista VIP aberta</div>
 
-            <h1 class="title-xl">Como começar a <span style="color: #b88a75 !important;">introdução alimentar</span> com mais tranquilidade, sem medo e sem confusão</h1>
+            <h1 class="title-xl">Como começar a <span class="text-accent">introdução alimentar</span> com mais tranquilidade, sem medo e sem confusão</h1>
 
             <p class="hero-subtitle">
               Sem saber por onde começar, com medo de errar e sem confiar no que vê na internet? Esse guia te mostra exatamente o que fazer, com segurança.
@@ -1119,6 +1125,26 @@
     </div>
   </div>
 
+  <section class="section reveal" style="padding-top: 8px;">
+    <div class="container">
+      <div class="emotion-section">
+        <div class="emotion-grid">
+        <div>
+          <p class="section-label">Antes de começar</p>
+          <h2 class="title-md">Se você está insegura, você não está sozinha</h2>
+        </div>
+
+        <div>
+          <p class="body-text">Muitas mães chegam nessa fase com medo, dúvidas e a sensação de não saber por onde começar.</p>
+          <p class="body-text">Esse guia foi pensado para organizar a informação e te dar mais clareza, segurança e tranquilidade no dia a dia.</p>
+          <p class="break-quote" style="font-size: clamp(1.6rem, 2.6vw, 2.2rem);">Clareza não vem de mais pesquisa. <br>Vem de quem estudou e também viveu essa fase.</p>
+          <a href="#conteudo" style="display: inline-block; margin-top: 32px; font-size: 13px; color: var(--green-dark); opacity: 0.7; text-decoration: none; letter-spacing: 0.04em;">veja o que o guia cobre →</a>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section reveal">
     <div class="container">
       <div class="about-grid">
@@ -1138,26 +1164,6 @@
           <div class="about-highlight">
             "Você não precisa saber tudo. Precisa só ter a orientação certa."
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section reveal" style="padding-top: 8px;">
-    <div class="container">
-      <div class="emotion-section">
-        <div class="emotion-grid">
-        <div>
-          <p class="section-label">Antes de começar</p>
-          <h2 class="title-md">Se você está insegura, você não está sozinha</h2>
-        </div>
-
-        <div>
-          <p class="body-text">Muitas mães chegam nessa fase com medo, dúvidas e a sensação de não saber por onde começar.</p>
-          <p class="body-text">Esse guia foi pensado para organizar a informação e te dar mais clareza, segurança e tranquilidade no dia a dia.</p>
-          <p class="break-quote" style="font-size: clamp(1.6rem, 2.6vw, 2.2rem);">Clareza não vem de mais pesquisa. <br>Vem de quem estudou e também viveu essa fase.</p>
-          <a href="#conteudo" style="display: inline-block; margin-top: 32px; font-size: 13px; color: var(--green-dark); opacity: 0.7; text-decoration: none; letter-spacing: 0.04em;">veja o que o guia cobre →</a>
-        </div>
         </div>
       </div>
     </div>
@@ -1207,7 +1213,7 @@
 
         <div style="text-align: center; margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--line);">
           <p style="font-size: 14px; color: var(--muted); margin-bottom: 16px;">Tudo isso em um guia simples,<br> direto e aplicável na vida real.</p>
-          <a href="#lista" class="cta-btn" style="background: var(--blush); color: var(--green-dark); box-shadow: none; animation: none;">Quero entrar na lista VIP</a>
+          <a href="#lista" class="cta-btn" style="background: var(--blush); color: var(--green-dark); box-shadow: none; animation: pulse-blush 2s ease-in-out infinite;">Quero entrar na lista VIP</a>
         </div>
       </div>
       
