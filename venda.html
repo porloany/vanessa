@@ -320,7 +320,7 @@
 
     .topic-card:nth-child(1) { background: var(--cream); }
     .topic-card:nth-child(2) { background: var(--green-dark); color: var(--cream); }
-    .topic-card:nth-child(3) { background: #f4ebe1; }
+    .topic-card:nth-child(3) { background: var(--cream-2); }
     .topic-card:nth-child(4) { background: var(--blush); }
 
     .topic-card .icon { font-size: 1.75rem; margin-bottom: 14px; }
@@ -383,7 +383,7 @@
     }
 
     .testimonial-card {
-      background: #e9f5e9;
+      background: var(--white);
       border-radius: 20px;
       padding: 24px;
       border: 1px solid rgba(49,75,56,0.08);
@@ -405,19 +405,19 @@
       flex-shrink: 0;
     }
 
-    .testimonial-name { font-size: 13px; font-weight: 600; color: #1a3a1f; }
+    .testimonial-name { font-size: 13px; font-weight: 600; color: var(--green-dark); }
 
     .testimonial-bubble {
-      background: #ffffff;
+      background: var(--cream-2);
       border-radius: 0 14px 14px 14px;
       padding: 12px 14px;
       font-size: 13.5px;
       line-height: 1.72;
-      color: #2a2a2a;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+      color: var(--charcoal);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
     }
 
-    .testimonial-time { font-size: 10px; color: #8a9a8a; text-align: right; margin-top: 4px; }
+    .testimonial-time { font-size: 10px; color: var(--muted); text-align: right; margin-top: 4px; opacity: 0.7; }
 
     /* SOBRE */
     .about-grid {
@@ -435,6 +435,18 @@
     }
 
     .about-photo-card img { height: 100%; object-fit: cover; }
+
+    .about-highlight {
+      background: var(--green-dark);
+      color: var(--cream);
+      padding: 22px 24px;
+      border-radius: 18px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.16rem;
+      font-style: italic;
+      line-height: 1.52;
+      box-shadow: var(--shadow);
+    }
 
     /* PREÇO */
     .price-shell {
@@ -712,7 +724,7 @@
   <!-- DEPOIMENTOS -->
   <section class="section reveal" style="padding-top: 0;">
     <div class="container">
-      <div class="cream-shell">
+      <div class="soft-shell">
         <p class="section-label">O que estão dizendo</p>
         <h2 class="title-md">Mães que já acompanham a Vanessa</h2>
         <div class="testimonials-grid">
@@ -758,13 +770,13 @@
         <div class="about-photo-card">
           <img src="vanessa-perfil.png" alt="Vanessa Goulart"/>
         </div>
-        <div class="cream-shell" style="display: flex; flex-direction: column; justify-content: center;">
+        <div style="display: flex; flex-direction: column; justify-content: center; padding: 54px 48px;">
           <p class="section-label">Quem criou o guia</p>
           <h2 class="title-lg">Vanessa Goulart</h2>
           <p class="lead-text">Nutricionista especialista em nutrição infantil — e mãe que já viveu essa fase com todas as dúvidas que você está sentindo agora.</p>
           <p class="body-text">Mais de 20 mil pessoas me acompanham no Instagram e sabe exatamente o que paralisa na hora de começar: o medo de errar, o excesso de informação e a sensação de que nunca é suficiente.</p>
           <p class="body-text">Esse guia nasceu pra mudar isso.</p>
-          <div style="margin-top: 20px; background: var(--green-dark); color: var(--cream); padding: 22px 24px; border-radius: 18px; font-family: 'Cormorant Garamond', serif; font-size: 1.16rem; font-style: italic; line-height: 1.52;">
+          <div class="about-highlight" style="margin-top: 20px;">
             "Você não precisa saber tudo. Precisa só ter a orientação certa."
           </div>
         </div>
@@ -833,7 +845,7 @@
   <!-- FAQ -->
   <section class="section reveal" style="padding-top: 0;">
     <div class="container">
-      <div class="soft-shell">
+      <div class="cream-shell">
         <p class="section-label">Dúvidas frequentes</p>
         <h2 class="title-md" style="margin-bottom: 28px;">Perguntas antes de comprar</h2>
 
@@ -859,12 +871,16 @@
 
   <!-- CTA FINAL -->
   <section class="section reveal" style="padding-top: 0; padding-bottom: 88px;">
-    <div class="container" style="text-align: center;">
-      <p class="section-label" style="text-align: center;">Pronta para começar?</p>
-      <h2 class="title-lg" style="margin-bottom: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">Você merece chegar nessa fase sentindo que sabe o que está fazendo</h2>
-      <a href="SEU_LINK_KIWIFY" target="_blank" rel="noopener noreferrer" class="cta-btn" style="margin: 0 auto;">Quero o guia agora</a>
-      <p style="font-size:12px; color:#888; margin-top:8px; text-align:center;"><span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#c0392b;margin-right:6px;vertical-align:middle;"></span> Preço de lançamento por tempo limitado</p>
-      <p style="font-size: 12px; color: var(--muted); margin-top: 14px; opacity: 0.7;">🔒 Compra segura · 7 dias de garantia</p>
+    <div class="container">
+      <div class="soft-shell" style="text-align: center; padding: 64px 48px; max-width: 680px; margin: 0 auto;">
+        <p class="section-label" style="text-align: center;">Pronta para começar?</p>
+        <h2 class="title-lg" style="margin-bottom: 8px;">Você merece chegar nessa fase sentindo que sabe o que está fazendo</h2>
+        <p class="body-text" style="margin-bottom: 28px;">Acesso imediato · leitura no celular, tablet ou computador · 7 dias de garantia</p>
+        <a href="SEU_LINK_KIWIFY" target="_blank" rel="noopener noreferrer" class="cta-btn" style="margin: 0 auto;">Quero o guia agora</a>
+        <p style="font-size:12px; color:var(--muted); margin-top:12px; opacity:0.7;">
+          <span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#c0392b;margin-right:6px;vertical-align:middle;"></span> Preço de lançamento por tempo limitado · 🔒 Compra segura via Kiwify
+        </p>
+      </div>
     </div>
   </section>
 
