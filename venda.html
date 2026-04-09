@@ -824,18 +824,18 @@
           observer.unobserve(entry.target);
         }
       });
+    }, { threshold: 0.12 });
     reveals.forEach(el => observer.observe(el));
 
-   <button id="back-top" style="position:fixed; bottom:28px; right:28px; width:44px; height:44px; border-radius:50%; background:var(--green-dark); color:var(--cream); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 14px rgba(0,0,0,0.18); opacity:0; pointer-events:none; transition:opacity 0.3s ease; z-index:999; font-size:18px;">↑</button>
-
-</body>st backTop = document.getElementById('back-top');
+    const backTop = document.getElementById('back-top');
     window.addEventListener('scroll', () => {
       backTop.style.opacity = window.scrollY > 400 ? '1' : '0';
       backTop.style.pointerEvents = window.scrollY > 400 ? 'auto' : 'none';
     });
     backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-  </script>.forEach(el => observer.observe(el));
   </script>
+
+  <button id="back-top" style="position:fixed; bottom:28px; right:28px; width:44px; height:44px; border-radius:50%; background:var(--green-dark); color:var(--cream); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 14px rgba(0,0,0,0.18); opacity:0; pointer-events:none; transition:opacity 0.3s ease; z-index:999; font-size:18px;">↑</button>
 
 </body>
 </html>
