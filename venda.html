@@ -129,15 +129,48 @@
 
     /* HERO */
     .hero-wrap {
-      background: var(--cream);
-      padding: 48px 0 72px;
+      background: var(--cream-2);
+      padding: 0;
+      overflow: hidden;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 48px;
-      align-items: center;
+      grid-template-columns: 1fr 1fr;
+      min-height: 680px;
+      align-items: stretch;
+    }
+
+    .hero-left {
+      padding: 64px 54px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-right::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 40%;
+      height: 100%;
+      background: linear-gradient(to right, var(--cream-2), transparent);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
     }
 
     .hero-badge {
@@ -156,15 +189,17 @@
       margin-bottom: 26px;
     }
 
-    .hero-price-block {
-      margin: 24px 0;
-      padding: 18px 20px;
-      background: rgba(196,144,122,0.10);
-      border: 1px solid rgba(196,144,122,0.22);
-      border-radius: 14px;
-      display: inline-flex;
+    .hero-cta-row {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+
+    .hero-price-inline {
+      display: flex;
       flex-direction: column;
-      gap: 4px;
     }
 
     .hero-price-from {
@@ -175,19 +210,21 @@
 
     .hero-price-main {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2.4rem;
+      font-size: 2.2rem;
       font-weight: 600;
       color: var(--green-dark);
       line-height: 1;
     }
 
-    .hero-price-note {
+    .hero-proof {
       font-size: 11px;
       color: var(--muted);
-      margin-top: 2px;
+      opacity: 0.8;
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
-
-    .hero-proof { font-size: 11px; color: var(--muted); opacity: 0.8; margin-top: 14px; }
 
     .hero-photo-frame {
       width: 100%;
@@ -463,6 +500,9 @@
 
     @media (max-width: 980px) {
       .hero-grid, .about-grid, .price-grid { grid-template-columns: 1fr; }
+      .hero-grid { min-height: auto; }
+      .hero-left { padding: 36px 22px; }
+      .hero-right { min-height: 360px; }
       .cards-grid, .testimonials-grid { grid-template-columns: 1fr; }
       .soft-shell, .cream-shell, .price-shell { padding: 34px 22px; }
       .section { padding: 54px 0; }
@@ -473,7 +513,7 @@
 </head>
 <body>
 
-  <div id="timer-bar" style="position:fixed; top:0; left:0; width:100%; background:#2d4a2d; color:#fff; text-align:center; padding:10px; font-size:14px; z-index:9999; letter-spacing:1px;">
+  <div id="timer-bar" style="position:fixed; top:0; left:0; width:100%; background:#2d4a2d; color:#fff; text-align:center; padding:14px 10px; font-size:14px; z-index:9999; letter-spacing:1px;">
     Preço de lançamento encerra em: <span id="timer-countdown" style="font-weight:bold;"></span>
   </div>
 
@@ -496,7 +536,7 @@
     setInterval(updateTimer, 1000);
   </script>
 
-  <div style="height: 50px;"></div>
+  <div style="height: 58px;"></div>
 
   <!-- TOPBAR -->
   <div style="background: var(--white); border-bottom: 1px solid var(--line);">
@@ -512,29 +552,26 @@
   <div class="hero-wrap">
     <div class="container">
       <div class="hero-grid">
-        <div>
+        <div class="hero-left">
           <div class="hero-badge">E-book completo • disponível agora</div>
-          <h1 class="title-xl">Você pesquisa, pesquisa, pesquisa — e ainda não sabe se está fazendo certo.</h1>
-          <p class="lead-text" style="margin-top: 18px; color: #c4907a; font-style: italic;">O problema não é falta de informação. É excesso de informação errada.</p>
+          <h1 class="title-xl">Você pesquisa, pesquisa — e ainda não sabe se está fazendo certo.</h1>
+          <p class="lead-text" style="margin-top: 18px;">O problema não é falta de informação. É excesso de <span style="color:#c4907a; font-style:italic;">informação errada.</span></p>
           <p class="body-text" style="margin-top: 10px;">Esse guia existe pra acabar com isso — e te dar a clareza que você precisava desde o início.</p>
 
-          <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 20px; margin: 24px 0;">
-            <div class="hero-price-block" style="margin: 0;">
-              <span class="hero-price-from">De R$ XX</span>
-              <span class="hero-price-main">R$ XX</span>
-              <span class="hero-price-note">pagamento único · acesso imediato</span>
+          <div class="hero-cta-row">
+            <div class="hero-price-inline">
+              <span class="hero-price-from">De R$ 67</span>
+              <span class="hero-price-main">R$ 47</span>
             </div>
             <a href="SEU_LINK_KIWIFY" target="_blank" rel="noopener noreferrer" class="cta-btn">Quero o guia agora</a>
           </div>
 
-          <p class="hero-proof" style="margin-top: 4px; font-size:12px; color:#888;">� Preço de lançamento por tempo limitado</p>
-          <p class="hero-proof">🔒 Compra segura · 7 dias de garantia</p>
+          <p class="hero-proof"><span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#c0392b;"></span> Preço de lançamento por tempo limitado</p>
+          <p class="hero-proof">🔒 Compra segura · 7 dias de garantia · acesso imediato</p>
         </div>
 
-        <div>
-          <div class="hero-photo-frame">
-            <img src="vanessa-perfil.png" alt="Vanessa Goulart"/>
-          </div>
+        <div class="hero-right">
+          <img src="vanessa-gravida.png" alt="Vanessa Goulart"/>
         </div>
       </div>
     </div>
@@ -574,7 +611,7 @@
 
         <div style="text-align: center; margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--line);">
           <a href="SEU_LINK_KIWIFY" target="_blank" rel="noopener noreferrer" class="cta-btn" style="background: var(--blush); color: var(--green-dark); box-shadow: none; animation: pulse-blush 2s ease-in-out infinite;">Quero o guia agora</a>
-          <p style="font-size:12px; color:#888; margin-top:8px; text-align:center;">🔴 Preço de lançamento por tempo limitado</p>
+          <p style="font-size:12px; color:#888; margin-top:8px; text-align:center;"><span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#c0392b;margin-right:6px;vertical-align:middle;"></span> Preço de lançamento por tempo limitado</p>
         </div>
       </div>
     </div>
@@ -660,13 +697,13 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-photo-card">
-          <img src="vanessa-perfil.png" alt="Vanessa Goulart"/>
+          <img src="vanessa-gravida.png" alt="Vanessa Goulart"/>
         </div>
         <div class="cream-shell" style="display: flex; flex-direction: column; justify-content: center;">
           <p class="section-label">Quem criou o guia</p>
           <h2 class="title-lg">Vanessa Goulart</h2>
           <p class="lead-text">Nutricionista especialista em nutrição infantil — e mãe que já viveu essa fase com todas as dúvidas que você está sentindo agora.</p>
-          <p class="body-text">Vanessa acompanha milhares de mães todos os dias e sabe exatamente o que paralisa na hora de começar: o medo de errar, o excesso de informação e a sensação de que nunca é suficiente.</p>
+          <p class="body-text">Mais de 20 mil pessoas me acompanham no Instagram e sabe exatamente o que paralisa na hora de começar: o medo de errar, o excesso de informação e a sensação de que nunca é suficiente.</p>
           <p class="body-text">Esse guia nasceu pra mudar isso.</p>
           <div style="margin-top: 20px; background: var(--green-dark); color: var(--cream); padding: 22px 24px; border-radius: 18px; font-family: 'Cormorant Garamond', serif; font-size: 1.16rem; font-style: italic; line-height: 1.52;">
             "Você não precisa saber tudo. Precisa só ter a orientação certa."
@@ -689,8 +726,8 @@
           </div>
           <div class="price-card">
             <p class="section-label">Guia de Introdução Alimentar</p>
-            <p class="price-from">De R$ XX</p>
-            <p class="price-main">R$ XX</p>
+            <p class="price-from">De R$ 67</p>
+            <p class="price-main">R$ 47</p>
             <p class="price-note">pagamento único · acesso imediato</p>
             <div class="price-benefits">
               ✔ E-book completo em PDF<br>
@@ -699,7 +736,7 @@
               ✔ 7 dias de garantia
             </div>
             <a href="SEU_LINK_KIWIFY" target="_blank" rel="noopener noreferrer" class="cta-btn" style="width: 100%; justify-content: center;">Quero o guia agora</a>
-            <p style="font-size:12px; color:#888; margin-top:8px; text-align:center;">🔴 Preço de lançamento por tempo limitado</p>
+            <p style="font-size:12px; color:#888; margin-top:8px; text-align:center;"><span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#c0392b;margin-right:6px;vertical-align:middle;"></span> Preço de lançamento por tempo limitado</p>
             <p class="price-guarantee">🔒 Compra 100% segura via Kiwify<br>Se não gostar em 7 dias, devolvemos tudo.</p>
           </div>
         </div>
@@ -740,7 +777,7 @@
       <p class="section-label" style="text-align: center;">Pronta para começar?</p>
       <h2 class="title-lg" style="margin-bottom: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">Você merece chegar nessa fase sentindo que sabe o que está fazendo</h2>
       <a href="SEU_LINK_KIWIFY" target="_blank" rel="noopener noreferrer" class="cta-btn" style="margin: 0 auto;">Quero o guia agora</a>
-      <p style="font-size:12px; color:#888; margin-top:8px; text-align:center;">🔴 Preço de lançamento por tempo limitado</p>
+      <p style="font-size:12px; color:#888; margin-top:8px; text-align:center;"><span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#c0392b;margin-right:6px;vertical-align:middle;"></span> Preço de lançamento por tempo limitado</p>
       <p style="font-size: 12px; color: var(--muted); margin-top: 14px; opacity: 0.7;">🔒 Compra segura · 7 dias de garantia</p>
     </div>
   </section>
@@ -757,7 +794,7 @@
           @vanessagoulart_nutri
         </a>
         <span>© 2026 Vanessa Goulart · Todos os direitos reservados</span>
-        <span class="footer-credit">Design & desenvolvimento por <a href="https://instagram.com/loanydias" target="_blank" rel="noopener noreferrer" style="color: inherit; opacity: 0.7; text-decoration: underline;">@loanydias</a></span>
+        <span class="footer-credit">Design & desenvolvimento por <a href="https://instagram.com/porloany" target="_blank" rel="noopener noreferrer" style="color: inherit; opacity: 0.7; text-decoration: underline;">@porloany</a></span>
       </div>
     </div>
   </footer>
@@ -777,3 +814,4 @@
 
 </body>
 </html>
+
