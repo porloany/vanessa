@@ -530,6 +530,7 @@
       .container { width: min(100% - 28px, 1180px); }
       footer { padding: 28px 0; }
       .topbar-name { display: none; }
+      .topbar-role { display: none; }
       .hero-topbar { justify-content: center; }
     }
   </style>
@@ -566,8 +567,8 @@
     <div class="container">
       <div class="hero-shell">
         <div class="hero-topbar">
-          <span class="topbar-name">Vanessa Goulart</span>
-          <span>Nutricionista infantil · guia de introdução alimentar</span>
+          <span><span class="topbar-role">Nutricionista infantil · </span>Guia de introdução alimentar 🍓</span>
+          <span><span class="topbar-role"></span>Nutricionista infantil · </span>Guia de introdução alimentar</span>
         </div>
         <div class="hero-grid">
           <div class="hero-left">
@@ -823,8 +824,17 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12 });
     reveals.forEach(el => observer.observe(el));
+
+   <button id="back-top" style="position:fixed; bottom:28px; right:28px; width:44px; height:44px; border-radius:50%; background:var(--green-dark); color:var(--cream); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 14px rgba(0,0,0,0.18); opacity:0; pointer-events:none; transition:opacity 0.3s ease; z-index:999; font-size:18px;">↑</button>
+
+</body>st backTop = document.getElementById('back-top');
+    window.addEventListener('scroll', () => {
+      backTop.style.opacity = window.scrollY > 400 ? '1' : '0';
+      backTop.style.pointerEvents = window.scrollY > 400 ? 'auto' : 'none';
+    });
+    backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  </script>.forEach(el => observer.observe(el));
   </script>
 
 </body>
