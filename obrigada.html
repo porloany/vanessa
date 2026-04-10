@@ -13,21 +13,25 @@
 
   <style>
     :root {
-      --green-dark: #2E4A35;
-      --green-deep: #243A2B;
-      --green-mid: #4B6452;
+      /* Nova Paleta Mamae Nutri */
+      --cor-terracota: #B66644;
+      --cor-creme: #F5F2ED;
+      --cor-verde-salvia: #93A28B;
+      --cor-texto: #4A3728;
+      /* Mapeamento de compatibilidade */
+      --green-dark: var(--cor-verde-salvia);
+      --green-deep: #7d8b76;
+      --green-mid: #7d8b76;
       --green-soft: #A8B69E;
-      --cream: #F7F1E8;
+      --muted: #6b5a4c;
+      --cream: var(--cor-creme);
       --cream-2: #EFE5D8;
-      --blush: #f0e4e0;
-      --blush-dark: #dcc8c4;
-      --butter: #D8C67A;
+      --blush: #e8ddd6;
       --white: #FFFCF8;
-      --charcoal: #22251F;
-      --muted: #5F695A;
-      --accent: #B88A75;
-      --line: rgba(49,75,56,0.12);
-      --shadow: 0 18px 40px rgba(28,36,30,0.08);
+      --charcoal: var(--cor-texto);
+      --accent: var(--cor-terracota);
+      --shadow: 0 18px 40px rgba(74, 55, 40, 0.08);
+      --line: rgba(74, 55, 40, 0.12);
       --radius-xl: 28px;
       --radius-lg: 20px;
       --radius-md: 14px;
@@ -35,6 +39,10 @@
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
+    a, button, input, select, textarea, [class*="btn"], [class*="card"], [class*="link"] {
+      transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
+    }
 
     body {
       background: var(--cream);
@@ -145,8 +153,8 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      background: var(--green-dark);
-      color: var(--cream);
+      background: var(--cor-terracota);
+      color: #fff;
       font-family: 'DM Sans', sans-serif;
       font-size: 11px;
       font-weight: 600;
@@ -159,12 +167,14 @@
       width: fit-content;
       opacity: 0;
       animation: fadeUp 0.5s ease 0.26s forwards, pulse 2s ease-in-out 0.76s infinite;
+      cursor: pointer;
     }
 
     .cta-btn:hover {
-      background: var(--green-mid);
+      background: #9a5538;
       transform: translateY(-2px);
       animation: fadeUp 0.5s ease 0.26s forwards;
+      cursor: pointer;
     }
 
     .mini {
@@ -288,8 +298,8 @@
 
     /* FOOTER */
     footer {
-      background: var(--charcoal);
-      color: var(--cream);
+      background: var(--cor-texto);
+      color: var(--cor-creme);
       padding: 52px 0 36px;
       text-align: center;
       font-size: 12px;
@@ -324,7 +334,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      color: var(--cream);
+      color: var(--cor-creme);
       opacity: 0.55;
       text-decoration: none;
       transition: opacity 0.2s;
